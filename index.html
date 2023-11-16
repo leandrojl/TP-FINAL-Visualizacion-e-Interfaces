@@ -69,43 +69,37 @@
 <body>
 
     <main class="container">
-        <div class="row mt-2 mb-2">
-            <div class="">
-                <div class="row">
-                    <div class="col-md-4 col-sm-12 d-flex align-items-center">
+        <div class="row  mt-2 mb-2">
+            
+                
+                    <div class="col-md-8 col-sm-12 d-flex align-items-center">
                         <a href="#">
                             <img src="imagenes/logo-italiano.jpg" alt="" class="img-fluid">
                         </a>
                     </div>
 
-                    <div class="col-md-8">
-                        <div class="row g-2">
-                            <div class="col-md col-sm-6 text-center "><button type="button"
-                                    class="btn btn-block custom-btn-blue rounded-5">Iniciar Sesión</button></div>
-                            <div class="col-md col-sm-6 text-center "><button type="button"
-                                    class="btn btn-block custom-btn-blue rounded-5">Registrarse</button></div>
-                            <div class="col-md col-sm-6 text-center "><button type="button"
-                                    class="btn btn-block custom-btn-green rounded-5">Portal Pacientes</button></div>
-                            <div class="col-md col-sm-6 text-center "><button type="button"
-                                    class="btn btn-block custom-btn-red rounded-5">Emergencias</button></div>
+                    <div class="col-md-4">
+                        <div class="row ">
+                            <div class="col-md col-sm-6 text-center rounded-3" style="background-color: red;"><button type="button"
+                                    class="btn btn-block text-uppercase fs-5 fw-bold">Emergencias</button></div>
                         </div>
                     </div>
-                </div>
-            </div>
+                
+           
         </div>
 
         <div class="row">
             <div class="border rounded-2 mt-3 p-4 bg-light">
                 <div class="row g-1">
-                    <div class="col-md col-sm-12 text-center"><a class="text-decoration-none" href=""> Principal</a>
+                    <div class="col-md col-sm-12 text-center"><a class="text-decoration-none fs-5 fw-bold" href=""> Principal</a>
                     </div>
-                    <div class="col-md col-sm-12 text-center"><a class="text-decoration-none" href=""> Solicita
+                    <div class="col-md col-sm-12 text-center"><a class="text-decoration-none fs-5 fw-bold" href=""> Solicita
                             Turno</a></div>
-                    <div class="col-md col-sm-12 text-center"><a class="text-decoration-none" href=""> Educacion</a>
+                    <div class="col-md col-sm-12 text-center"><a class="text-decoration-none fs-5 fw-bold" href=""> Educacion</a>
                     </div>
-                    <div class="col-md col-sm-12 text-center"><a class="text-decoration-none" href=""> Quiero
+                    <div class="col-md col-sm-12 text-center"><a class="text-decoration-none fs-5 fw-bold" href=""> Quiero
                             afiliarme</a></div>
-                    <div class="col-md col-sm-12 text-center"><a class="text-decoration-none" href=""> Contacto</a>
+                    <div class="col-md col-sm-12 text-center"><a class="text-decoration-none fs-5 fw-bold" href=""> Contacto</a>
                     </div>
                 </div>
             </div>
@@ -121,13 +115,15 @@
                             <p class="h1">Acceder a mi cuenta</p>
                             <label for="input_dni" class="form-label">DNI</label>
                             <input type="text" class="form-control" id="input_dni" name="input_dni">
-                            <label for="input_password" class="form-label">Contrasena</label>
+                            <label for="input_password" class="form-label">Contraseña</label>
                             <input type="password" class="form-control" id="input_password" name="input_password">
                             <button type="submit" class="btn btn-lg btn-success mt-3 mb-3 align-self-center">Ingresar</button>
                             <a href="#" class="text-decoration-none align-self-center">Olvide mi contrasena</a>
                             <hr class="mb-2">
                             <button type="button" class="btn btn-sm btn-dark align-self-center">Registrarse</button>
-                            <p><i class="fa-brands fa-google"></i></p>
+                            <!-- <button type="button" class="btn btn-sm btn-dark align-self-center">Registrarse</button> -->
+
+                            <!-- <p><i class="fa-brands fa-google"></i></p> -->
                         </form>
                     </div>
         </div>
@@ -137,13 +133,13 @@
             <div class="col-12 col-md-3 d-flex flex-column align-items-center mb-5">
                 <div class="card">
                     
-                    <img src="imagenes/books2.png" class="card-img-top img-fluid rounded-1"
+                    <img src="imagenes/books3.jpg" class="card-img-top img-fluid rounded-1"
                             style="width: 500px; height: 150px;" alt="...">
                     
                     <div class="card-body text-center mt-3 rounded-5">
-                        <h5 class="card-title">Quiero estudiar</h5>
+                        <h5 class="card-title fw-bold">Quiero estudiar</h5>
 
-                        <a href="#" class="btn btn-lg btn-success">Ver mas</a>
+                        <a href="#" class="btn btn-lg btn-success mt-3">Ver mas</a>
                     </div>
                 </div>
             </div>
@@ -154,89 +150,128 @@
                             style="width: 500px; height: 150px;" alt="...">
                     
                     <div class="card-body text-center mt-3 rounded-5">
-                        <h5 class="card-title">Quiero trabajar</h5>
+                        <h5 class="card-title fw-bold">Quiero trabajar</h5>
 
-                        <a href="#" class="btn btn-lg btn-success">Ver mas</a>
+                        <a href="#" class="btn btn-lg btn-success mt-3">Ver mas</a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-3 d-flex flex-column align-items-center mb-5">
-                <div class="card" style="width: 18rem; border: none">
-                    <img src="imagenes/Hosp_italiano_logo.png" class="card-img-top img-fluid"
-                        style="width: 500px; height: 150px;" alt="...">
-                    <div class="card-body text-center mt-3 rounded-5" style="background-color: black;">
-                        <h5 class="card-title" style="color: white;">Nosotros</h5>
+                <div class="card">
+                    
+                    <img src="imagenes/Hosp_italiano_logo.png" class="card-img-top img-fluid rounded-1"
+                            style="width: 500px; height: 150px;" alt="...">
+                    
+                    <div class="card-body text-center mt-3 rounded-5">
+                        <h5 class="card-title fw-bold">Nosotros</h5>
 
-                        <a href="#" class="btn btn-primary">Ver mas</a>
+                        <a href="#" class="btn btn-lg btn-success mt-3">Ver mas</a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-3 d-flex flex-column align-items-center mb-5">
-                <div class="card" style="width: 18rem; border: none">
-                    <img src="imagenes/united.png" class="card-img-top img-fluid rounded-5"
-                        style="width: 500px; height: 150px;" alt="...">
-                    <div class="card-body text-center mt-3 rounded-5" style="background-color: black;">
-                        <h5 class="card-title" style="color: white;">Planes medicos</h5>
+                <div class="card">
+                    
+                    <img src="imagenes/united.png" class="card-img-top img-fluid rounded-1"
+                            style="width: 500px; height: 150px;" alt="...">
+                    
+                    <div class="card-body text-center mt-3 rounded-5">
+                        <h5 class="card-title fw-bold">Planes medicos</h5>
 
-                        <a href="#" class="btn btn-primary">Ver mas</a>
+                        <a href="#" class="btn btn-lg btn-success mt-3">Ver mas</a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-3 d-flex flex-column align-items-center mb-5">
-                <div class="card" style="width: 18rem; border: none">
-                    <img src="imagenes/doctor-3.png" class="card-img-top img-fluid rounded-5"
-                        style="width: 500px; height: 150px;" alt="...">
-                    <div class="card-body text-center mt-3 rounded-5" style="background-color: black;">
-                        <h5 class="card-title" style="color: white;">Investigacion</h5>
+                <div class="card">
+                    
+                    <img src="imagenes/investigacion medica.jpg" class="card-img-top img-fluid rounded-1"
+                            style="width: 500px; height: 150px;" alt="...">
+                    
+                    <div class="card-body text-center mt-3 rounded-5">
+                        <h5 class="card-title fw-bold">Investigacion</h5>
 
-                        <a href="#" class="btn btn-primary">Ver mas</a>
+                        <a href="#" class="btn btn-lg btn-success mt-3">Ver mas</a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-3 d-flex flex-column align-items-center mb-5">
-                <div class="card" style="width: 18rem; border: none">
-                    <img src="imagenes/calendar2.png" class="card-img-top img-fluid rounded-5"
-                        style="width: 500px; height: 150px;" alt="...">
-                    <div class="card-body text-center mt-3 rounded-5" style="background-color: black;">
-                        <h5 class="card-title" style="color: white;">Atencion sin turno</h5>
+                <div class="card">
+                    
+                    <img src="imagenes/calendar6.png" class="card-img-top img-fluid rounded-1"
+                            style="width: 500px; height: 150px;" alt="...">
+                    
+                    <div class="card-body text-center mt-3 rounded-5">
+                        <h5 class="card-title fw-bold">Atencion sin turno</h5>
 
-                        <a href="#" class="btn btn-primary">Ver mas</a>
+                        <a href="#" class="btn btn-lg btn-success mt-3">Ver mas</a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-3 d-flex flex-column align-items-center mb-5">
-                <div class="card" style="width: 18rem; border: none">
-                    <img src="imagenes/people.jpg" class="card-img-top img-fluid rounded-5"
-                        style="width: 500px; height: 150px;" alt="...">
-                    <div class="card-body text-center mt-3 rounded-5" style="background-color: black;">
-                        <h5 class="card-title" style="color: white;">Charlas Informativas</h5>
+                <div class="card">
+                    
+                    <img src="imagenes/medicos_hablando1.jpg " class="card-img-top img-fluid rounded-1"
+                            style="width: 500px; height: 150px;" alt="...">
+                    
+                    <div class="card-body text-center mt-3 rounded-5">
+                        <h5 class="card-title fw-bold">Charlas informativas</h5>
 
-                        <a href="#" class="btn btn-primary">Ver mas</a>
+                        <a href="#" class="btn btn-lg btn-success mt-3">Ver mas</a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-3 d-flex flex-column align-items-center mb-5">
-                <div class="card" style="width: 18rem; border: none">
-                    <img src="imagenes/city.png" class="card-img-top img-fluid rounded-5"
-                        style="width: 500px; height: 150px;" alt="...">
-                    <div class="card-body text-center mt-3 rounded-5" style="background-color: black;">
-                        <h5 class="card-title" style="color: white;">Sedes</h5>
+                <div class="card">
+                    
+                    <img src="imagenes/hospiItaliano.jpg" class="card-img-top img-fluid rounded-1"
+                            style="width: 500px; height: 150px;" alt="...">
+                    
+                    <div class="card-body text-center mt-3 rounded-5">
+                        <h5 class="card-title fw-bold">Sedes</h5>
 
-                        <a href="#" class="btn btn-primary">Ver mas</a>
+                        <a href="#" class="btn btn-lg btn-success mt-3">Ver mas</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <footer class="row">
-            <div class="container rounded-2 mt-3 p-4 bg-dark">
-                <div class="row">
-                    <div class="col col-md col-sm-12 text-center"><a class="text-decoration-none" href=""> Principal</a></div>
-                    <div class="col col-md col-sm-12 text-center"><a class="text-decoration-none" href=""> Solicita Turno</a></div>
-                    <div class="col col-md col-sm-12 text-center"><a class="text-decoration-none" href=""> Educacion</a></div>
-                    <div class="col col-md col-sm-12 text-center"><a class="text-decoration-none" href=""> Contacto</a></div>
-                </div>
-            </div>
+        <footer class="row rounded-2 mt-3 p-4 bg-dark">
+                
+                    <div class="col col-md-4 col-sm-12 text-center d-flex flex-column " style="color: white;">
+                            <h3 class="fw-bold fs-3">SEDES</h3>
+                            <hr>
+                            <p>Hospital Italiano sede Central</p>
+                            <p>Tte. Gral. Juan Domingo Perón 4190, CABA.</p>
+                            <p>CP C1199ABB </p>
+                            <p>Tel. (+54 11) 4959 - 0200</p>
+                            <hr>
+                            <p> Hospital Italiano sede San Justo Agustín Rocca </p>
+                            <p>Pres. Juan Domingo Perón 2231 </p>
+                            <p>CP C1198AAW</p>
+                            <p>Tel. (+54 11) 4959 - 0200</p>
+                        
+                    </div>
+                    <div class="col col-md-4 col-sm-12 text-center d-flex flex-column " style="color: white;">
+                        <h3 class="fw-bold fs-3">¡SEGUINOS!</h3>
+                            <hr>
+                            <a class="text-decoration-none mt-2"  href="#">Instagram</a>
+                            <a class="text-decoration-none mt-2 "  href="#">Youtube</a>
+                            <a class="text-decoration-none mt-2"  href="#">Facebook</a>
+                            <a class="text-decoration-none mt-2"  href="#">Twitter</a>
+                        
+                    </div>
+                    <div class="col col-md-4 col-sm-12 text-center d-flex flex-column" style="color: white;">
+                        
+                            <h3 class="fw-bold fs-3">LEGALES</h3>
+                            <hr>
+                            <p><a class="text-decoration-none mt-2" href="https://www.hospitalitaliano.org.ar/#!/home/terninos" class="linkFooter" analytics="" action="footer-terminos-condiciones" category="home" label="footer terminos y cond">Términos y condiciones de uso</a></p>
+                            <p><a class="text-decoration-none mt-2" href="https://www.hospitalitaliano.org.ar/#!/home/politicas" class="linkFooter" analytics="" action="footer-politica" category="home" label="Footer politica de privacidad">Política de privacidad</a></p>
+                            <p><a class="text-decoration-none mt-2" href="https://www.argentina.gob.ar/produccion/defensadelconsumidor/formulario">Defensa de las y los Consumidores. <br><strong style="font-size: 12px">(Para reclamos ingrese aquí)</strong></a></p>
+                        
+                    </div>
+                    
+            
 
         </footer>
 
