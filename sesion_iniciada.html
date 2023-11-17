@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Perfil de Usuario</title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Menú lateral -->
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#solicitarTurno">
+                                Solicitar Turno
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#verTurnos">
+                                Ver Turnos Agendados
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#verEstudios">
+                                Ver Estudios Realizados
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#guardiaVirtual">
+                                Guardia Virtual
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#miAfiliado">
+                                Mi Afiliado
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Contenido principal -->
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <!-- Contenido de Solicitar Turno -->
+                <div id="solicitarTurno" class="content-section">
+                    <!-- Puedes agregar aquí el código para solicitar turno -->
+                    <h2>Solicitar Turno</h2>
+                    <div class="container">
+                        <div class="row">
+                            <!-- Barra lateral -->
+                            <aside class="col-md-4">
+                                <div class="vertical-bar">
+                                    <ul class="list-unstyled">
+                                        <li><button class="btn btn-link" id="btnArea" disabled>Seleccionar Área</button>
+                                        </li>
+                                        <li><button class="btn btn-link" id="btnEspecialidad" disabled>Seleccionar
+                                                Especialidad</button></li>
+                                        <li><button class="btn btn-link" id="btnLugar" disabled>Seleccionar
+                                                Lugar</button></li>
+                                        <li><button class="btn btn-link" id="btnHorario" disabled>Seleccionar
+                                                Horario</button></li>
+                                        <li><button class="btn btn-link" id="btnConfirmar" disabled>Confirmar
+                                                Turno</button></li>
+                                    </ul>
+                                </div>
+                            </aside>
+
+                            <!-- Contenido dinámico -->
+                            <div class="col-md-8">
+                                <div id="seccionArea" class="form-section">
+                                    <h3>Seleccionar Área</h3>
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="areaOptions" id="consultaMedica" value="Consulta Medica"> Consulta Médica
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="areaOptions" id="estudios" value="Estudios"> Estudios
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="areaOptions" id="laboratorio" value="Laboratorio"> Laboratorio
+                                        </label>
+                                    </div>
+                                    <button class="btn btn-primary" id="btnContinuarArea">Continuar</button>
+                                </div>
+
+                                <div id="seccionEspecialidad" class="form-section">
+                                    <h3>Seleccionar Especialidad</h3>
+                                    <div class="form-group">
+                                        <label for="listaEspecialidades">Especialidades:</label>
+                                        <select class="form-control" id="listaEspecialidades">
+                                            <!-- Agrega aquí las especialidades desde tu JSON -->
+                                            <option value="traumatologia">Traumatología</option>
+                                            <option value="cardiologia">Cardiología</option>
+                                            <option value="dermatologia">Dermatología</option>
+                                            <!-- ... Agrega más especialidades según tu necesidad ... -->
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="listaNumeros">Seleccionar Número:</label>
+                                        <select class="form-control" id="listaNumeros" disabled>
+                                            <!-- La segunda lista se habilitará después de seleccionar una especialidad -->
+                                        </select>
+                                    </div>
+                                    <button class="btn btn-primary" id="btnContinuarEspecialidad"
+                                        disabled>Continuar</button>
+                                </div>
+
+                                <div id="seccionLugar" class="form-section">
+                                    <h3>Seleccionar Lugar</h3>
+                                    <div class="card-deck">
+                                        <!-- Card 1: Hospital Italiano de San Justo -->
+                                        <div class="card">
+                                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Hospital Italiano de San Justo</h5>
+                                                <p class="card-text">Dirección: Av. Pres. Perón 2576, San Justo, Buenos
+                                                    Aires</p>
+                                                <button class="btn btn-link" onclick="seleccionarLugar('SanJusto', -34.6815395, -58.5634755)">Seleccionar</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Card 2: Hospital Italiano de Almagro -->
+                                        <div class="card">
+                                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Hospital Italiano de Almagro</h5>
+                                                <p class="card-text">Dirección: Gascón 450, C1181ACH CABA</p>
+                                                <button class="btn btn-link" onclick="seleccionarLugar('Almagro', -34.606161, -58.417175)">Seleccionar</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Card 3: Hospital Italiano de Ramos Mejía -->
+                                        <div class="card">
+                                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Hospital Italiano de Ramos Mejía</h5>
+                                                <p class="card-text">Dirección: Urquiza 609, Ramos Mejía, Buenos Aires</p>
+                                                <button class="btn btn-link" onclick="seleccionarLugar('RamosMejia', -34.6513945, -58.5560264)">Seleccionar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" id="btnContinuarLugar"
+                                        disabled>Continuar</button>
+                                </div>
+
+                                <div id="seccionHorario" class="form-section">
+                                    <h3>Seleccionar Horario</h3>
+                                    <button class="btn btn-primary" id="btnContinuarHorario"
+                                        disabled>Continuar</button>
+                                </div>
+
+                                <div id="seccionConfirmar" class="form-section">
+                                    <h3>Confirmar Turno</h3>
+                                    <!-- Mostrar los datos seleccionados anteriormente -->
+                                    <p>Tipo de Consulta: <span id="tipoConsultaSeleccionado"></span></p>
+                                    <p>Especialidad: <span id="especialidadSeleccionada"></span></p>
+                                    <p>Lugar: <span id="lugarSeleccionado"></span></p>
+                                    <p>Horario: <span id="horarioSeleccionado"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Variable para almacenar la información seleccionada por el usuario
+            var seleccionUsuario = {
+                area: null,
+                especialidad: null,
+                lugar: null,
+                horario: null
+            };
+
+            function ocultarTodasLasSecciones() {
+                $('.form-section').hide();
+            }
+
+            function actualizarBotones(seccionActual) {
+                $('.btn').prop('disabled', true);
+                $('#btnContinuar' + seccionActual).prop('disabled', false);
+            }
+
+            ocultarTodasLasSecciones();
+            $('#seccionArea').show();
+            actualizarBotones('Area');
+
+            $('#btnContinuarArea').click(function () {
+                if ($('input[name=areaOptions]:checked').length > 0) {
+                    // Guardar la selección del usuario
+                    seleccionUsuario.area = $('input[name=areaOptions]:checked').val();
+
+                    ocultarTodasLasSecciones();
+                    $('#seccionEspecialidad').show();
+                    actualizarBotones('Especialidad');
+                } else {
+                    alert('Selecciona una opción antes de continuar.');
+                }
+            });
+
+            // Botón "Continuar" para la sección de Especialidad
+            $('#btnContinuarEspecialidad').click(function () {
+                // Guardar la selección del usuario
+                seleccionUsuario.especialidad = $('#listaEspecialidades').val();
+
+                seleccionUsuario.especialidadNumero = $('#listaNumeros').val();
+
+                ocultarTodasLasSecciones();
+                $('#seccionLugar').show();
+                actualizarBotones('Lugar');
+            });
+
+            // Habilitar la segunda lista al seleccionar una especialidad
+            $('#listaEspecialidades').change(function () {
+                var especialidadSeleccionada = $(this).val();
+                $('#listaNumeros').prop('disabled', false).empty();
+
+                // Agregar opciones a la segunda lista
+                for (var i = 1; i <= 5; i++) {
+                    $('#listaNumeros').append('<option value="' + i + '">' + especialidadSeleccionada + ' ' + i + '</option>');
+                }
+            });
+
+            // Botón "Continuar" para la sección de Lugar
+            $('#btnContinuarLugar').click(function () {
+                // Guardar la selección del usuario
+                seleccionUsuario.lugar = $('#lugarSeleccionado').text();
+
+                ocultarTodasLasSecciones();
+                $('#seccionHorario').show();
+                actualizarBotones('Horario');
+            });
+
+            // Botón "Continuar" para la sección de Horario
+            $('#btnContinuarHorario').click(function () {
+                // Guardar la selección del usuario
+                seleccionUsuario.horario = 'Horario seleccionado'; // Debes ajustar esto con la lógica real
+
+                ocultarTodasLasSecciones();
+                $('#seccionConfirmar').show();
+                actualizarBotones('Confirmar');
+
+                // Mostrar los datos seleccionados anteriormente en Confirmar Turno
+                $('#tipoConsultaSeleccionado').text(seleccionUsuario.area);
+                $('#especialidadSeleccionada').text(seleccionUsuario.especialidad + ' ' + seleccionUsuario.especialidadNumero).css('textTransform', 'capitalize');
+                $('#lugarSeleccionado').text(seleccionUsuario.lugar);
+                $('#horarioSeleccionado').text(seleccionUsuario.horario);
+            });
+
+            // Función para mostrar el contenido correspondiente al hacer clic en el menú lateral
+            $('.nav-link').click(function (e) {
+                e.preventDefault();
+                var target = $(this).attr('href');
+                $('.content-section').hide();
+                $(target).show();
+
+                // Actualizar contenido cuando el usuario regresa a una sección
+                if (target === '#seccionArea') {
+                    // Restaurar la información guardada
+                    $('#btnArea').html('Seleccionar Área (' + seleccionUsuario.area + ')');
+                } else if (target === '#seccionEspecialidad') {
+                    $('#btnEspecialidad').html('Seleccionar Especialidad (' + seleccionUsuario.especialidad + ')');
+                } else if (target === '#seccionLugar') {
+                    $('#btnLugar').html('Seleccionar Lugar (' + seleccionUsuario.lugar + ')');
+                } else if (target === '#seccionHorario') {
+                    $('#btnHorario').html('Seleccionar Horario (' + seleccionUsuario.horario + ')');
+                }
+            });
+        });
+
+        // Función para seleccionar un lugar y mostrar mapa
+        function seleccionarLugar(nombre, latitud, longitud) {
+            // Mostrar el nombre del lugar seleccionado
+            $('#lugarSeleccionado').text(nombre);
+
+            // Guardar la latitud y longitud seleccionada
+            seleccionUsuario.latitud = latitud;
+            seleccionUsuario.longitud = longitud;
+
+            // Habilitar el botón "Continuar Lugar"
+            $('#btnContinuarLugar').prop('disabled', false);
+
+            // Mostrar mapa (usando la API de Google Maps)
+            var mapaURL = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&q=' + latitud + ',' + longitud;
+            $('#mapa').attr('src', mapaURL);
+        }
+    </script>
+</body>
+
+</html>
