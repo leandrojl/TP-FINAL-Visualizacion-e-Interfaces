@@ -1,0 +1,42 @@
+.text-white-hover:hover {
+    color: green !important;
+  }
+  .text-green-hover:hover {
+    color: green !important;
+    text-decoration: underline;
+  }
+  .uppercase-text {
+    text-transform: uppercase;
+}
+.texto-negro {
+    color: black;
+}
+@media (max-width: 1024px) {
+    .text-1024 {
+        font-size: 35px;
+    }
+}
+@media (max-width: 425px) {
+  .display-none-425 {
+      display: none;
+  }
+}
+@media (max-width: 1024px) {
+  #navbar-large {
+      display: none;
+  }
+
+  #navbar-small {
+      display: block;
+  }
+}
+
+@media (min-width: 1025px) {
+  #navbar-large {
+      display: block;
+  }
+
+  #navbar-small {
+      display: none;
+  }
+}

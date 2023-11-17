@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital Italiano de Buenos Aires</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -55,6 +56,7 @@
             color: black;
         }
 
+
         /* a {
             font-size: 24px;
             text-decoration: none;
@@ -89,38 +91,59 @@
         </div>
 
         <div class="row">
-            <div class="border rounded-2 mt-3 p-4 bg-light">
-                <div class="row g-1">
-                    <div class="col-md col-sm-12 text-center"><a class="text-decoration-none fs-5 fw-bold" href=""> Principal</a>
+            <div class="container border rounded-2 mt-3 p-4 bg-light" id="navbar-large">
+                <div class="row g-5">
+                    <div class="col-lg col-md-4 col-sm-12 text-center uppercase-text "><a class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro" href="#"> Principal</a>
                     </div>
-                    <div class="col-md col-sm-12 text-center"><a class="text-decoration-none fs-5 fw-bold" data-toggle="modal" data-target="#myModal" href=""> Solicita
-                            Turno</a></div>
-                    <div class="col-md col-sm-12 text-center"><a class="text-decoration-none fs-5 fw-bold" href=""> Educacion</a>
+                    <div class="col-lg col-md-4 col-sm-12 text-center uppercase-text"><a class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro" data-toggle="modal" data-target="#myModal" href="#"> Solicita Turno</a></div>
+                    <div class="col-lg col-md-4 col-sm-12 text-center uppercase-text"><a class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro" href="#"> Educación</a>
                     </div>
-                    <div class="col-md col-sm-12 text-center"><a class="text-decoration-none fs-5 fw-bold" href=""> Quiero
-                            afiliarme</a></div>
-                    <div class="col-md col-sm-12 text-center"><a class="text-decoration-none fs-5 fw-bold" href=""> Contacto</a>
+                    <div class="col-lg col-md-6 col-sm-12 text-center uppercase-text"><a class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro" href="#"> Quiero Afiliarme</a></div>
+                    <div class="col-lg col-md-6 col-sm-12 text-center uppercase-text"><a class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro" href="#"> Contacto</a>
                     </div>
                 </div>
             </div>
+        
+            <!-- Navbar hamburguesa para resoluciones de 1024px o menos -->
+            <nav class="navbar navbar-light bg-light" id="navbar-small">
+                <div class="container">
+                    
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <div class="navbar-nav">
+                            <a class="nav-item nav-link text-green-hover" href="#">Principal</a>
+                            <a class="nav-item nav-link text-green-hover" data-toggle="modal" data-target="#myModal" href="#">Solicita Turno</a>
+                            <a class="nav-item nav-link text-green-hover" href="#">Educación</a>
+                            <a class="nav-item nav-link text-green-hover" href="#">Quiero Afiliarme</a>
+                            <a class="nav-item nav-link text-green-hover" href="#">Contacto</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </div>
+        
 
         <div class="row my-4">
-                    <div class="col-md-8">
-                        <img src="imagenes/doctors-cartoon-mage.jpg" class="img-fluid rounded-2"
+                    <div class="col-lg-8 col-md-12">
+                        <img src="imagenes/doctors-cartoon-mage.jpg" class="img-fluid rounded-2 display-none-425"
                             style="width: 100%; height: 400px;">
                     </div>
-                    <div class="col-md-4">
-                        <form class="form d-flex flex-column" action="sesion_iniciada.html">
-                            <p class="h1">Acceder a mi cuenta</p>
+
+                    <div class="col-lg-4 col-md-12">
+                        <form class="form d-flex flex-column" action="">
+                            <h3 class="h1 text-1024">Portal Pacientes</h3>
+
                             <label for="input_dni" class="form-label">DNI</label>
                             <input type="text" class="form-control" id="input_dni" name="input_dni">
                             <label for="input_password" class="form-label">Contraseña</label>
                             <input type="password" class="form-control" id="input_password" name="input_password">
-                            <button type="submit" class="btn btn-lg btn-success mt-3 mb-3 align-self-center">Ingresar</button>
-                            <a href="#" class="text-decoration-none align-self-center">Olvide mi contrasena</a>
-                            <hr class="mb-2">
-                            <button type="button" class="btn btn-sm btn-dark align-self-center">Registrarse</button>
+                            <button type="submit" class="btn btn-lg btn-success mt-2 mb-2 align-self-center">Ingresar</button>
+                            <a href="#" class="text-decoration-none align-self-center mt-2 mb-2">Olvide mi contrasena</a>
+                            <hr>
+                            <button type="button" class="btn btn-lg btn-dark align-self-center">Registrarse</button>
                             <!-- <button type="button" class="btn btn-sm btn-dark align-self-center">Registrarse</button> -->
 
                             <!-- <p><i class="fa-brands fa-google"></i></p> -->
@@ -130,7 +153,10 @@
 
 
         <div class="row">
-            <div class="col-12 col-md-3 d-flex flex-column align-items-center mb-5">
+            <div class="col-12 d-flex flex-column align-items-center mt-3 mb-3">
+                <h2 class="fs-1 fw-bold">Novedades</h2>
+            </div>
+            <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center mb-5">
                 <div class="card">
                     
                     <img src="imagenes/books3.jpg" class="card-img-top img-fluid rounded-1"
@@ -143,7 +169,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-3 d-flex flex-column align-items-center mb-5">
+            <div class="col-lg-3 col-md-6 col-md-3 d-flex flex-column align-items-center mb-5">
                 <div class="card">
                     
                     <img src="imagenes/doctors-image.jpg" class="card-img-top img-fluid rounded-1"
@@ -156,7 +182,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-3 d-flex flex-column align-items-center mb-5">
+            <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center mb-5">
                 <div class="card">
                     
                     <img src="imagenes/Hosp_italiano_logo.png" class="card-img-top img-fluid rounded-1"
@@ -169,7 +195,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-3 d-flex flex-column align-items-center mb-5">
+            <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center mb-5">
                 <div class="card">
                     
                     <img src="imagenes/united.png" class="card-img-top img-fluid rounded-1"
@@ -182,7 +208,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-3 d-flex flex-column align-items-center mb-5">
+            <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center mb-5">
                 <div class="card">
                     
                     <img src="imagenes/investigacion medica.jpg" class="card-img-top img-fluid rounded-1"
@@ -195,7 +221,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-3 d-flex flex-column align-items-center mb-5">
+            <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center mb-5">
                 <div class="card">
                     
                     <img src="imagenes/calendar6.png" class="card-img-top img-fluid rounded-1"
@@ -208,7 +234,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-3 d-flex flex-column align-items-center mb-5">
+            <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center mb-5">
                 <div class="card">
                     
                     <img src="imagenes/medicos_hablando1.jpg " class="card-img-top img-fluid rounded-1"
@@ -221,7 +247,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-3 d-flex flex-column align-items-center mb-5">
+            <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center mb-5">
                 <div class="card">
                     
                     <img src="imagenes/hospiItaliano.jpg" class="card-img-top img-fluid rounded-1"
@@ -253,18 +279,18 @@
                 <div class="col col-md-4 col-sm-12 text-center d-flex flex-column " style="color: white;">
                     <h3 class="fw-bold fs-3">¡SEGUINOS!</h3>
                         <hr>
-                        <a class="text-decoration-none mt-2"  href="#">Instagram</a>
-                        <a class="text-decoration-none mt-2 "  href="#">Youtube</a>
-                        <a class="text-decoration-none mt-2"  href="#">Facebook</a>
-                        <a class="text-decoration-none mt-2"  href="#">Twitter</a>
+                        <a class="text-decoration-none mt-2 text-white-hover" style="color: white;" href="#">Instagram</a>
+                        <a class="text-decoration-none mt-2 text-white-hover" style="color: white;" href="#">Youtube</a>
+                        <a class="text-decoration-none mt-2 text-white-hover" style="color: white;" href="#">Facebook</a>
+                        <a class="text-decoration-none mt-2 text-white-hover" style="color: white;" href="#">Twitter</a>
                 </div>
                 <div class="col col-md-4 col-sm-12 text-center d-flex flex-column" style="color: white;">
                     
                         <h3 class="fw-bold fs-3">LEGALES</h3>
                         <hr>
-                        <p><a class="text-decoration-none mt-2" href="https://www.hospitalitaliano.org.ar/#!/home/terninos" class="linkFooter" analytics="" action="footer-terminos-condiciones" category="home" label="footer terminos y cond">Términos y condiciones de uso</a></p>
-                        <p><a class="text-decoration-none mt-2" href="https://www.hospitalitaliano.org.ar/#!/home/politicas" class="linkFooter" analytics="" action="footer-politica" category="home" label="Footer politica de privacidad">Política de privacidad</a></p>
-                        <p><a class="text-decoration-none mt-2" href="https://www.argentina.gob.ar/produccion/defensadelconsumidor/formulario">Defensa de las y los Consumidores. <br><strong style="font-size: 12px">(Para reclamos ingrese aquí)</strong></a></p> 
+                        <p><a class="text-decoration-none mt-2 text-white-hover" style="color: white;" href="https://www.hospitalitaliano.org.ar/#!/home/terninos" class="linkFooter" analytics="" action="footer-terminos-condiciones" category="home" label="footer terminos y cond">Términos y condiciones de uso</a></p>
+                        <p><a class="text-decoration-none mt-2 text-white-hover" style="color: white;" href="https://www.hospitalitaliano.org.ar/#!/home/politicas" class="linkFooter" analytics="" action="footer-politica" category="home" label="Footer politica de privacidad">Política de privacidad</a></p>
+                        <p><a class="text-decoration-none mt-2 text-white-hover" style="color: white;" href="https://www.argentina.gob.ar/produccion/defensadelconsumidor/formulario">Defensa de las y los Consumidores. <br><strong style="font-size: 12px">(Para reclamos ingrese aquí)</strong></a></p> 
                 </div>
     </footer>
 
