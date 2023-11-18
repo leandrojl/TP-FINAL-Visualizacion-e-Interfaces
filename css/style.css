@@ -48,3 +48,9 @@ body {
       display: none;
   }
 }
+#btnAyuda {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1000; /* Asegura que el botón esté sobre otros elementos */
+}
