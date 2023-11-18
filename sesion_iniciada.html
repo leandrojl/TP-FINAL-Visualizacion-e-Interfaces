@@ -8,54 +8,114 @@
     <title>Perfil de Usuario</title>
 </head>
 
+<link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Lilita+One&family=Montez&family=Montserrat&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
 <body>
 
     <div class="container-fluid">
+        
         <div class="row">
-            <!-- Menú lateral -->
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-                <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#solicitarTurno">
+            <div class="col-lg-4 col-md-6 col-sm-4 mt-3 mb-3">
+                <a href="#">
+                    <img src="imagenes/logo-italiano.jpg" alt="" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-lg-8 col-md-6 col-sm-8 mt-3 mb-3">
+                
+                <div id="image-icon" class="d-flex justify-content-end">
+                    <img src="imagenes/user icon.png" alt="icono-usuario" style="width: 60px; height: 50px;">
+                </div>
+                
+            </div>
+           
+
+            <nav class="col-lg-12 p-3 bg-success">
+                <div class="row">
+                    <div class="col-md col-sm-12 text-center mt-1 mb-1">
+                        <a class="nav-link text-decoration-none fs-5 fw-bold text-white-hover texto-negro uppercase-text text-black" href="#solicitarTurno">
+                        Solicitar Turno
+                        </a>
+                    </div>
+                    <div class="col-md col-sm-12 text-center mt-1 mb-1">
+                        <a class="nav-link text-decoration-none fs-5 fw-bold text-white-hover texto-negro uppercase-text text-black" href="#verTurnos">
+                        Turnos Agendados
+                        </a>
+                    </div>
+                    <div class="col-md col-sm-12 text-center mt-1 mb-1">
+                        <a class="nav-link text-decoration-none fs-5 fw-bold text-white-hover texto-negro uppercase-text text-black" href="#verEstudios">
+                        Estudios Realizados
+                        </a>
+                    </div>
+                    <div class="col-md col-sm-12 text-center mt-1 mb-1">
+                        <a class="nav-link text-decoration-none fs-5 fw-bold text-white-hover texto-negro uppercase-text text-black" href="#guardiaVirtual">
+                            Guardia Virtual
+                        </a>
+                    </div>
+                    <div class="col-md col-sm-12 text-center mt-1 mb-1">
+                        <a class="nav-link text-decoration-none fs-5 fw-bold text-white-hover texto-negro uppercase-text text-black" href="#miAfiliado">
+                            Mi Afiliado
+                        </a>
+                    </div>
+                </div>
+                
+                    <!-- <ul class="row">
+                        <li class="col-md col-sm-12 text-center nav-item">
+                            <a class="nav-link text-decoration-none fs-5 fw-bold text-white-hover texto-negro uppercase-text text-black" href="#solicitarTurno">
                                 Solicitar Turno
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#verTurnos">
+                        <li class="col-md col-sm-12 text-center nav-item">
+                            <a class="nav-link text-decoration-none fs-5 fw-bold text-white-hover texto-negro uppercase-text text-black" href="#verTurnos">
                                 Ver Turnos Agendados
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#verEstudios">
+                        <li class="col-md col-sm-12 text-center nav-item">
+                            <a class="nav-link text-decoration-none fs-5 fw-bold text-white-hover texto-negro uppercase-text text-black" href="#verEstudios">
                                 Ver Estudios Realizados
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#guardiaVirtual">
+                        <li class="col-md col-sm-12 text-center nav-item">
+                            <a class="nav-link text-decoration-none fs-5 fw-bold text-white-hover texto-negro uppercase-text text-black" href="#guardiaVirtual">
                                 Guardia Virtual
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#miAfiliado">
+                        <li class="col-md col-sm-12 text-center nav-item">
+                            <a class="nav-link text-decoration-none fs-5 fw-bold text-white-hover texto-negro uppercase-text text-black" href="#miAfiliado">
                                 Mi Afiliado
                             </a>
                         </li>
-                    </ul>
-                </div>
+                        
+                    </ul> -->
+                
             </nav>
 
-            <!-- Contenido principal -->
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <!-- Contenido de Solicitar Turno -->
+            <main role="main" class="col-lg-12 col-md-12 ml-sm-auto px-4">
+
+
+               
                 <div id="solicitarTurno" class="content-section">
-                    <!-- Puedes agregar aquí el código para solicitar turno -->
-                    <h2>Solicitar Turno</h2>
+                    
+                    <div class="col-lg-12 mt-5 mb-5 text-center">
+                        <h1>Solicitar Turno</h1>
+                        
+                    </div>
+                    <div class="col-lg-12 text-center mb-5">
+                        <p class="h3">Hola USUARIO, como lo podemos ayudar?</p>
+                    </div>
+                    
                     <div class="container">
-                        <div class="row">
-                            <!-- Barra lateral -->
-                            <aside class="col-md-4">
-                                <div class="vertical-bar">
+                        <div class="row ">
+                          
+                            <aside class="col-lg-4 col-md-4" >
+                                <div class="vertical-bar d-flex justify-content-center" style="background-color: darkgray;">
                                     <ul class="list-unstyled">
                                         <li><button class="btn btn-link" id="btnArea" disabled>Seleccionar Área</button>
                                         </li>
@@ -72,7 +132,7 @@
                             </aside>
 
                             <!-- Contenido dinámico -->
-                            <div class="col-md-8">
+                            <div class="col-lg-8 col-md-8">
                                 <div id="seccionArea" class="form-section">
                                     <h3>Seleccionar Área</h3>
                                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -169,6 +229,18 @@
                     </div>
                 </div>
             </main>
+        </div>
+            
+            
+                
+                
+
+                
+            
+       
+    
+            
+            
         </div>
     </div>
 
