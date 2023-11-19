@@ -18,6 +18,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
+        <style>
+            .card:hover {
+                border: 2px solid blue; /* Cambia el color del borde al azul */
+            }
+        </style>
+
 <body>
 
     <div class="container-fluid">
@@ -88,25 +94,25 @@
                         <p class="h3">Hola USUARIO, como lo podemos ayudar?</p>
                     </div>
                     
-                    <div class="container">
+                    <div class="container ">
                         <div class="row ">
                           
                             <aside class="col-lg-12 col-md-12 col-sm-12" >
                                 
-                                    <ul class="list-unstyled bg-secondary rounded-4 text-center">
-                                        <li class="col-lg-2 ">
-                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-white" id="btnArea">Seleccionar Área</button>
+                                    <ul class="row list-unstyled bg-secondary rounded-4 text-center">
+                                        <li class="col-lg ">
+                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-white" id="btnArea"> Área</button>
                                         </li>
-                                        <li class="col-lg-2 ">
-                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-white" id="btnEspecialidad" >Seleccionar
+                                        <li class="col-lg ">
+                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-white" id="btnEspecialidad" >
                                                 Especialidad</button></li>
-                                        <li class="col-lg-2 ">
-                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-white" id="btnLugar" >Seleccionar
+                                        <li class="col-lg ">
+                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-white" id="btnLugar" >
                                                 Lugar</button></li>
-                                        <li class="col-lg-2 ">
-                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-white" id="btnHorario" >Seleccionar
+                                        <li class="col-lg ">
+                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-white" id="btnHorario" >
                                                 Horario</button></li>
-                                        <li class="col-lg-2 ">
+                                        <li class="col-lg">
                                             <button class="btn btn-link text-decoration-none fs-5 fw-bold text-white" id="btnConfirmar">Confirmar
                                                 Turno</button></li>
                                     </ul>
@@ -120,13 +126,13 @@
                                     <div class="container">
                                         <div class="row btn-group-toggle g-2" data-toggle="buttons">
                                             <h3 class="h3 col-lg-12">Área</h3>
-                                            <label class="col-lg-12 col-sm-12 btn btn-dark rounded-4">
+                                            <label class="col-lg-12 col-sm-12 btn btn-dark rounded-4 p-3">
                                                 <input type="radio" name="areaOptions" id="consultaMedica" value="Consulta Medica"> Consulta Médica
                                             </label>
-                                            <label class="col-lg-12 col-sm-12 btn  btn-danger rounded-4">
+                                            <label class="col-lg-12 col-sm-12 btn  btn-danger rounded-4 p-3">
                                                 <input type="radio" name="areaOptions" id="estudios" value="Estudios"> Estudios
                                             </label>
-                                            <label class="col-lg-12 col-sm-12 btn  btn-success rounded-4">
+                                            <label class="col-lg-12 col-sm-12 btn  btn-success rounded-4 p-3">
                                                 <input type="radio" name="areaOptions" id="laboratorio" value="Laboratorio"> Laboratorio
                                             </label>
                                             <button class="btn btn-primary mt-3 rounded-4" style="width: 30%;" id="btnContinuarArea">Continuar</button>
@@ -159,93 +165,113 @@
                                         disabled>Continuar</button>
                                 </div>
 
-                                <div id="seccionLugar " class="form-section bg-success-subtle rounded-4 p-3">
+                                <div id="seccionLugar" class="form-section bg-success-subtle rounded-4 p-3">
                                     <h3 class="h3 mt-3 mb-3">Seleccionar Lugar</h3>
                                     <div class="row g-2">
                                         <!-- Card 1: Hospital Italiano de San Justo -->
-                                        <div class="col-lg-6 col-md-4 col-sm-12 card">
+                                        <div class="col-lg-12 col-md-4 col-sm-12 card">
                                             
                                             <div class="card-body">
                                                 <h5 class="card-title">Hospital Italiano de San Justo</h5>
                                                 <p class="card-text">Dirección: Av. Pres. Perón 2576, San Justo, Buenos
                                                     Aires</p>
-                                                <button class="btn btn-link" onclick="seleccionarLugar('SanJusto', -34.6815395, -58.5634755)">Seleccionar</button>
+                                                
                                             </div>
                                         </div>
 
-                                        <!-- Card 2: Hospital Italiano de Almagro -->
-                                        <div class="col-lg-6 col-md-4 col-sm-12 card">
+                                        
+                                        <div class="col-lg-12 col-md-4 col-sm-12 card">
                                             
                                             <div class="card-body">
                                                 <h5 class="card-title">Hospital Italiano de Almagro</h5>
                                                 <p class="card-text">Dirección: Gascón 450, C1181ACH CABA</p>
-                                                <button class="btn btn-link" onclick="seleccionarLugar('Almagro', -34.606161, -58.417175)">Seleccionar</button>
+                                                
                                             </div>
                                         </div>
 
-                                        <!-- Card 3: Hospital Italiano de Ramos Mejía -->
-                                        <div class="col-lg-6 col-md-4 col-sm-12 card">
+                                        
+                                        <div class="col-lg-12 col-md-4 col-sm-12 card">
                                             
                                             <div class="card-body">
                                                 <h5 class="card-title">Hospital Italiano de Ramos Mejía</h5>
                                                 <p class="card-text">Dirección: Urquiza 609, Ramos Mejía, Buenos Aires</p>
-                                                <button class="btn btn-link" onclick="seleccionarLugar('RamosMejia', -34.6513945, -58.5560264)">Seleccionar</button>
+                                                
                                             </div>
                                         </div>
-                                        <div class="col-lg-12 d-flex flex-row justify-content-center">
-                                            <button class="btn btn-primary" id="btnContinuarLugar"
+                                        <div class="col-lg-12 text-start">
+                                            <button class="btn btn-primary mt-3 rounded-4" style="width: 30%;" id="btnContinuarLugar"
                                         disabled>Continuar</button>
                                         </div>
                                     </div>
                                     
                                 </div>
 
-                                <div id="seccionHorario" class="row form-section">
+                                <div id="seccionHorario" class="row form-section  bg-success-subtle rounded-4 p-3">
                                     <h3 class="h3 mt-3 mb-3">Seleccionar Horario</h3>
-                                    <div class="card-deck">
-                                        <!-- Card 1: Hospital Italiano de San Justo -->
-                                        <div class="card">
+                                    <div class="row g-3">
+                                        
+                                        <div class="col-lg-12 card">
                                             
                                             <div class="card-body">
                                                 <h5 class="card-title">Miercoles, 19hs</h5>
                                                 
-                                                <button class="btn btn-link" >Seleccionar</button>
+                                                
                                             </div>
                                         </div>
 
-                                        <!-- Card 2: Hospital Italiano de Almagro -->
-                                        <div class="card">
+                                      
+                                        <div class="col-lg-12 card">
                                             
                                             <div class="card-body">
                                                 <h5 class="card-title">Jueves, 21hs</h5>
                                                 
-                                                <button class="btn btn-link" >Seleccionar</button>
+                                                
                                             </div>
                                         </div>
 
-                                        <!-- Card 3: Hospital Italiano de Ramos Mejía -->
-                                        <div class="card">
-                                            
-                                            <div class="card-body">
-                                                <h5 class="card-title">Viernes, 12hs</h5>
-                                                
-                                                <button class="btn btn-link" >Seleccionar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-primary" id="btnContinuarHorario"
+                                        
+                                        <button class="btn btn-primary mt-3 rounded-4" style="width: 30%;" id="btnContinuarHorario"
                                         disabled>Continuar</button>
+                                    </div>
+                                    
                                 </div>
 
-                                <div id="seccionConfirmar" class="form-section">
-                                    <h3 class="h3 mt-3 mb-3">Confirmar Turno</h3>
-                                    <!-- Mostrar los datos seleccionados anteriormente -->
-                                    <p>Tipo de Consulta: <span id="tipoConsultaSeleccionado"></span></p>
-                                    <p>Especialidad: <span id="especialidadSeleccionada"></span></p>
-                                    <p>Lugar: <span id="lugarSeleccionado"></span></p>
-                                    <p>Horario: <span id="horarioSeleccionado"></span></p>
+                                <div id="seccionConfirmar" class="form-section bg-success-subtle rounded-4 p-3">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 text-center mt-1 mb-1">
+                                            <h3 class="h3 mt-3 mb-3">Confirmar Turno</h3>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 text-center mt-1 mb-1">
+                                            <p class="fs-4 fw-bold">Tipo de Consulta: </span></p>
+                                            <span id="tipoConsultaSeleccionado" class="fs-5"></span>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 text-center mt-1 mb-1">
+                                            <p class="fs-4 fw-bold">Especialidad: </p>
+                                            <span id="especialidadSeleccionada" class="fs-5"></span>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 text-center mt-1 mb-1">
+                                            <p class="fs-4 fw-bold">Lugar: </span></p>
+                                            <span id="lugarSeleccionado" class="fs-5"></span>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 text-center mt-1 mb-1">
+                                            <p class="fs-4 fw-bold">Horario: </span></p> 
+                                            <span id="horarioSeleccionado" class="fs-5"></span>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 text-center">
+                                            <button class="btn btn-primary mt-3 rounded-4" style="width: 30%;" id="btnContinuarHorario"
+                                        >Confirmar</button>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
