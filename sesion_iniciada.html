@@ -22,6 +22,7 @@
             .card:hover {
                 border: 2px solid blue; /* Cambia el color del borde al azul */
             }
+            
         </style>
 
 <body>
@@ -90,30 +91,28 @@
                         <h1>Solicitar Turno</h1>
                         
                     </div>
-                    <div class="col-lg-12 text-center mb-5">
-                        <p class="h3">Hola USUARIO, como lo podemos ayudar?</p>
-                    </div>
+                    
                     
                     <div class="container ">
                         <div class="row ">
                           
-                            <aside class="col-lg-12 col-md-12 col-sm-12" >
+                            <aside class="col-lg-12 col-md-12 col-sm-12  rounded-5 mb-3" >
                                 
-                                    <ul class="row list-unstyled bg-secondary rounded-4 text-center">
+                                    <ul class="row list-unstyled  rounded-4 text-center">
                                         <li class="col-lg ">
-                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-white" id="btnArea"> Área</button>
+                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-black active" id="btnArea"> Área</button>
                                         </li>
                                         <li class="col-lg ">
-                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-white" id="btnEspecialidad" >
+                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-black" id="btnEspecialidad" >
                                                 Especialidad</button></li>
                                         <li class="col-lg ">
-                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-white" id="btnLugar" >
+                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-black" id="btnLugar" >
                                                 Lugar</button></li>
                                         <li class="col-lg ">
-                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-white" id="btnHorario" >
+                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-black" id="btnHorario" >
                                                 Horario</button></li>
                                         <li class="col-lg">
-                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-white" id="btnConfirmar">Confirmar
+                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-black" id="btnConfirmar">Confirmar
                                                 Turno</button></li>
                                     </ul>
                                
@@ -124,52 +123,73 @@
                                 <div id="seccionArea" class="form-section bg-success-subtle rounded-4 p-3 ">
                                     
                                     <div class="container">
-                                        <div class="row btn-group-toggle g-2" data-toggle="buttons">
-                                            <h3 class="h3 col-lg-12">Área</h3>
-                                            <label class="col-lg-12 col-sm-12 btn btn-dark rounded-4 p-3">
-                                                <input type="radio" name="areaOptions" id="consultaMedica" value="Consulta Medica"> Consulta Médica
-                                            </label>
-                                            <label class="col-lg-12 col-sm-12 btn  btn-danger rounded-4 p-3">
-                                                <input type="radio" name="areaOptions" id="estudios" value="Estudios"> Estudios
-                                            </label>
-                                            <label class="col-lg-12 col-sm-12 btn  btn-success rounded-4 p-3">
-                                                <input type="radio" name="areaOptions" id="laboratorio" value="Laboratorio"> Laboratorio
-                                            </label>
-                                            <button class="btn btn-primary mt-3 rounded-4" style="width: 30%;" id="btnContinuarArea">Continuar</button>
+                                        <div  class="row btn-group-toggle g-3" data-toggle="buttons">
+                                            <h3 class="h3 mt-3 mb-3">Seleccionar Área</h3>
+                                            <div class="col-lg-4 col-md-12 col-sm-4 btn btn-dark rounded-5 p-3">
+                                                <label >
+                                                    <input type="radio" name="areaOptions" id="consultaMedica" value="Consulta Medica"> Consulta Médica
+                                                </label>
+                                            </div>
+
+                                            <div class="col-lg-4 col-md-12 col-sm-4 btn  btn-danger rounded-5 p-3">
+                                                <label >
+                                                    <input type="radio" name="areaOptions" id="estudios" value="Estudios"> Estudios
+                                                </label>
+                                            </div>
+
+                                            <div class="col-lg-4 col-md-12 col-sm-4 btn btn-success rounded-5 p-3">
+                                                <label >
+                                                    <input type="radio" name="areaOptions" id="laboratorio" value="Laboratorio"> Laboratorio
+                                                </label>
+                                            </div>
+                                            
+                                            
+                                            
+                                            <div class="col-lg-12 mt-3">
+                                                <button class="btn btn-primary rounded-4" id="btnContinuarArea">Continuar</button>
+                                            </div>
                                         </div>
                                     </div>
                                     
                                     
                                 </div>
 
-                                <div id="seccionEspecialidad" class="form-section bg-success-subtle rounded-4 p-3">
+                                <div id="seccionEspecialidad" class="row form-section bg-success-subtle rounded-4 p-3">
                                     <h3 class="h3 mt-3 mb-3">Seleccionar Especialidad</h3>
-                                    <div class="form-group">
-                                        <label for="listaEspecialidades">Especialidades:</label>
-                                        <select class="form-control" id="listaEspecialidades">
-                                            <!-- Agrega aquí las especialidades desde tu JSON -->
-                                            <option value="traumatologia">Traumatología</option>
-                                            <option value="cardiologia">Cardiología</option>
-                                            <option value="dermatologia">Dermatología</option>
-                                            <!-- ... Agrega más especialidades según tu necesidad ... -->
-                                        </select>
+                                
+                                    <div class="col-lg-6 mt-3"> 
+                                        <div class="form-group">
+                                            <label for="listaEspecialidades">Especialidades:</label>
+                                            <select class="form-control" style="width:80%"; id="listaEspecialidades">
+                                                <!-- Agrega aquí las especialidades desde tu JSON -->
+                                                <option value="traumatologia">Traumatología</option>
+                                                <option value="cardiologia">Cardiología</option>
+                                                <option value="dermatologia">Dermatología</option>
+                                                <!-- ... Agrega más especialidades según tu necesidad ... -->
+                                            </select>
+                                        </div>
                                     </div>
-
-                                    <div class="form-group">
-                                        <label for="listaNumeros">Seleccionar Número:</label>
-                                        <select class="form-control" id="listaNumeros" disabled>
-                                            <!-- La segunda lista se habilitará después de seleccionar una especialidad -->
-                                        </select>
+                                
+                                    <div class="col-lg-6 mt-3"> 
+                                        <div class="form-group">
+                                            <label for="listaNumeros">Seleccionar Número:</label>
+                                            <select class="form-control" style="width:80%"; id="listaNumeros" disabled>
+                                               
+                                            </select>
+                                        </div>
                                     </div>
-                                    <button class="btn btn-primary rounded-4" style="width: 30%;" id="btnContinuarEspecialidad"
-                                        disabled>Continuar</button>
+                                
+                                    <div class="col-lg-12 mt-3">
+                                        <button class="btn btn-primary rounded-4" id="btnContinuarEspecialidad">Continuar</button>
+                                    </div>
                                 </div>
+                                
 
                                 <div id="seccionLugar" class="form-section bg-success-subtle rounded-4 p-3">
                                     <h3 class="h3 mt-3 mb-3">Seleccionar Lugar</h3>
                                     <div class="row g-2">
                                         <!-- Card 1: Hospital Italiano de San Justo -->
-                                        <div class="col-lg-12 col-md-4 col-sm-12 card">
+                                        <div class="col-lg-4 col-md-4 col-sm-12 card">
                                             
                                             <div class="card-body">
                                                 <h5 class="card-title">Hospital Italiano de San Justo</h5>
@@ -180,7 +200,7 @@
                                         </div>
 
                                         
-                                        <div class="col-lg-12 col-md-4 col-sm-12 card">
+                                        <div class="col-lg-4 col-md-4 col-sm-12 card">
                                             
                                             <div class="card-body">
                                                 <h5 class="card-title">Hospital Italiano de Almagro</h5>
@@ -190,7 +210,7 @@
                                         </div>
 
                                         
-                                        <div class="col-lg-12 col-md-4 col-sm-12 card">
+                                        <div class="col-lg-4 col-md-4 col-sm-12 card">
                                             
                                             <div class="card-body">
                                                 <h5 class="card-title">Hospital Italiano de Ramos Mejía</h5>
@@ -199,8 +219,8 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-12 text-start">
-                                            <button class="btn btn-primary mt-3 rounded-4" style="width: 30%;" id="btnContinuarLugar"
-                                        disabled>Continuar</button>
+                                            <button class="btn btn-primary mt-3 rounded-4"  id="btnContinuarLugar"
+                                        >Continuar</button>
                                         </div>
                                     </div>
                                     
@@ -210,9 +230,9 @@
                                     <h3 class="h3 mt-3 mb-3">Seleccionar Horario</h3>
                                     <div class="row g-3">
                                         
-                                        <div class="col-lg-12 card">
+                                        <div class="col-lg-3 card">
                                             
-                                            <div class="card-body">
+                                            <div class="card-body text-center fw-bold">
                                                 <h5 class="card-title">Miercoles, 19hs</h5>
                                                 
                                                 
@@ -220,48 +240,84 @@
                                         </div>
 
                                       
-                                        <div class="col-lg-12 card">
+                                        <div class="col-lg-3 card">
                                             
-                                            <div class="card-body">
+                                            <div class="card-body text-center fw-bold">
                                                 <h5 class="card-title">Jueves, 21hs</h5>
                                                 
                                                 
                                             </div>
                                         </div>
+                                        <div class="col-lg-3 card">
+                                            
+                                            <div class="card-body text-center fw-bold">
+                                                <h5 class="card-title">Viernes, 21hs</h5>
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 card">
+                                            
+                                            <div class="card-body text-center fw-bold">
+                                                <h5 class="card-title">Sabado, 21hs</h5>
+                                                
+                                                
+                                            </div>
+                                        </div>
 
-                                        
-                                        <button class="btn btn-primary mt-3 rounded-4" style="width: 30%;" id="btnContinuarHorario"
+                                        <div class="col-lg-12 text-start">
+                                            <button class="btn btn-primary mt-3 rounded-4"  id="btnContinuarHorario"
                                         disabled>Continuar</button>
+                                        </div>
+                                        
                                     </div>
                                     
                                 </div>
 
-                                <div id="seccionConfirmar" class="form-section bg-success-subtle rounded-4 p-3">
+                                <div id="seccionConfirmar" class="form-section bg-success-subtle rounded-4 p-3 mb-3">
                                     <div class="row">
-                                        <div class="col-lg-12 col-md-12 text-center mt-1 mb-1">
-                                            <h3 class="h3 mt-3 mb-3">Confirmar Turno</h3>
+                                        <div class="col-lg-2 col-md-12 text-center mt-1 mb-1">
+                                            <h3 class="h3 fw-bold mt-3 mb-3">Turno:</h3>
                                         </div>
-                                        <div class="col-lg-12 col-md-12 text-center mt-1 mb-1">
-                                            <p class="fs-4 fw-bold">Tipo de Consulta: </span></p>
+                                        <div class="col-lg-2 col-md-12 text-center mt-1 mb-1">
+                                            <p class="fs-4 fw-bold">Consulta: </span></p>
                                             <span id="tipoConsultaSeleccionado" class="fs-5"></span>
                                         </div>
-                                        <div class="col-lg-12 col-md-12 text-center mt-1 mb-1">
+                                        <div class="col-lg-2 col-md-12 text-center mt-1 mb-1">
                                             <p class="fs-4 fw-bold">Especialidad: </p>
                                             <span id="especialidadSeleccionada" class="fs-5"></span>
                                         </div>
-                                        <div class="col-lg-12 col-md-12 text-center mt-1 mb-1">
+                                        <div class="col-lg-2 col-md-12 text-center mt-1 mb-1">
                                             <p class="fs-4 fw-bold">Lugar: </span></p>
                                             <span id="lugarSeleccionado" class="fs-5"></span>
                                         </div>
-                                        <div class="col-lg-12 col-md-12 text-center mt-1 mb-1">
+                                        <div class="col-lg-2 col-md-12 text-center mt-1 mb-1">
                                             <p class="fs-4 fw-bold">Horario: </span></p> 
                                             <span id="horarioSeleccionado" class="fs-5"></span>
                                         </div>
-                                        <div class="col-lg-12 col-md-12 text-center">
-                                            <button class="btn btn-primary mt-3 rounded-4" style="width: 30%;" id="btnContinuarHorario"
-                                        >Confirmar</button>
+                                        <div class="col-lg-12 col-md-12 text-end mt-2">
+                                            <button class="btn btn-primary rounded-4" id="confirmarTurno">Confirmar</button>
                                         </div>
                                         
+                                    </div>
+
+                                    <div class="modal fade" id="confirmacionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Turno Confirmado</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Su turno ha sido confirmado.
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     
                                     
@@ -297,6 +353,7 @@
 
     <script>
         $(document).ready(function () {
+            
             // Variable para almacenar la información seleccionada por el usuario
             var seleccionUsuario = {
                 area: null,
@@ -310,9 +367,15 @@
             }
 
             function actualizarBotones(seccionActual) {
-                $('.btn').prop('disabled', true);
+                $('.btn').prop('disabled', false);
                 $('#btnContinuar' + seccionActual).prop('disabled', false);
             }
+            $("#confirmarTurno").prop("disabled", false);
+            
+        $("#confirmarTurno").click(function() {
+            $("#confirmacionModal").modal("show");
+        });
+    
 
             ocultarTodasLasSecciones();
             $('#seccionArea').show();

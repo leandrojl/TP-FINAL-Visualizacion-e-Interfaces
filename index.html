@@ -60,6 +60,10 @@
         h5 {
             color: white;
         } */
+
+        #confirmacionModal {
+            z-index: 1050 !important;
+        }
     </style>
 </head>
 
@@ -119,11 +123,11 @@
                 </div>
             </nav>
         </div>
-        <button id="btnAyuda" class="btn btn-primary">¿Cómo podemos ayudarte?</button>
+        
 
         <div class="row my-4">
                     <div class="col-lg-8 col-md-12">
-                        <img src="imagenes/doctors-cartoon-mage.jpg" class="img-fluid rounded-2 display-none-425"
+                        <img src="imagenes/doctors-image.jpg" class="img-fluid rounded-2 display-none-425"
                             style="width: 100%; height: 400px;">
                     </div>
 
@@ -133,8 +137,10 @@
 
                             <label for="input_dni" class="form-label">DNI</label>
                             <input type="text" class="form-control" id="input_dni" name="input_dni">
+                            <p class="text-danger">Dni incorrecto</p>
                             <label for="input_password" class="form-label">Contraseña</label>
                             <input type="password" class="form-control" id="input_password" name="input_password">
+                            <p class="text-danger ">Contraseña incorrecta</p>
                             <button type="submit" class="btn btn-lg btn-success mt-2 mb-2 align-self-center">Ingresar</button>
                             <a href="#" class="text-decoration-none align-self-center mt-2 mb-2">Olvide mi contrasena</a>
                             <hr>
@@ -167,7 +173,7 @@
             <div class="col-lg-3 col-md-6 col-md-3 d-flex flex-column align-items-center mb-5">
                 <div class="card">
                     
-                    <img src="imagenes/doctors-image.jpg" class="card-img-top img-fluid rounded-1"
+                    <img src="imagenes/doctors5.jpg" class="card-img-top img-fluid rounded-1"
                             style="width: 250px; height: 150px;" alt="...">
                     
                     <div class="card-body text-center mt-3 rounded-5">
@@ -236,7 +242,7 @@
                             style="width: 250px; height: 150px;" alt="...">
                     
                     <div class="card-body text-center mt-3 rounded-5">
-                        <h5 class="card-title fw-bold">Charlas informativas</h5>
+                        <h5 class="card-title fw-bold">Congresos</h5>
 
                         <a href="#" class="btn btn-lg btn-success mt-3">Ver mas</a>
                     </div>
@@ -420,11 +426,13 @@
                         <div class="form-row">
                             <div class="col-lg-12 col-md-12 mb-3">
                                 <label for="nombre">Nombre</label>
-                                <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                                <input type="text" class="form-control" id="nombre" placeholder="Nombre" >
+                                <p class="text-danger">Debe llenar este campo</p>
                             </div>
                             <div class="col-lg-12 col-md-12 mb-3">
                                 <label for="apellido">Apellido</label>
-                                <input type="text" class="form-control" id="apellido" placeholder="Apellido" required>
+                                <input type="text" class="form-control" id="apellido" placeholder="Apellido" >
+                                <p class="text-danger">Debe llenar este campo</p>
                             </div>
                         </div>
                     </div>
@@ -433,11 +441,13 @@
                         <div class="form-row">
                             <div class="col-lg-12 col-md-12 mb-3">
                                 <label for="telefono">Teléfono</label>
-                                <input type="tel" class="form-control" id="telefono" placeholder="Teléfono" required>
+                                <input type="tel" class="form-control" id="telefono" placeholder="Teléfono" >
+                                <p class="text-danger">Debe llenar este campo</p>
                             </div>
                             <div class="col-lg-12 col-md-12 mb-3">
                                 <label for="dni">DNI</label>
-                                <input type="text" class="form-control" id="dni" placeholder="DNI" required>
+                                <input type="text" class="form-control" id="dni" placeholder="DNI" >
+                                <p class="text-danger">Debe llenar este campo</p>
                             </div>
                         </div>
                     </div>
@@ -446,16 +456,18 @@
                         <div class="form-row">
                             <div class="col-lg-12 col-md-12 mb-3">
                                 <label for="cobertura">Cobertura Médica</label>
-                                <select id="cobertura" class="form-control" required>
+                                <select id="cobertura" class="form-control" >
                                     <option value="" selected disabled>Seleccionar...</option>
                                     <option>Obra Social</option>
                                     <option>Prepaga</option>
                                     <option>Otro</option>
                                 </select>
+                                <p class="text-danger">Debe llenar este campo</p>
                             </div>
                             <div class="col-lg-12 col-md-12 mb-3">
                                 <label for="fechaNacimiento">Fecha de Nacimiento</label>
-                                <input type="date" class="form-control" id="fechaNacimiento" required>
+                                <input type="date" class="form-control" id="fechaNacimiento" >
+                                <p class="text-danger">Debe llenar este campo</p>
                             </div>
                         </div>
                     </div>
@@ -464,11 +476,13 @@
                         <div class="form-row">
                             <div class="col-lg-12 col-md-12 mb-3">
                                 <label for="correo">Correo Electrónico</label>
-                                <input type="email" class="form-control" id="correo" placeholder="Correo Electrónico" required>
+                                <input type="email" class="form-control" id="correo" placeholder="Correo Electrónico" >
+                                <p class="text-danger">Debe llenar este campo</p>
                             </div>
                             <div class="col-lg-12 col-md-12 mb-3">
                                 <label for="numeroDocumento">Número de Documento</label>
-                                <input type="text" class="form-control" id="numeroDocumento" placeholder="Número de Documento" required>
+                                <input type="text" class="form-control" id="numeroDocumento" placeholder="Número de Documento" >
+                                <p class="text-danger">Debe llenar este campo</p>
                             </div>
                         </div>
                     </div>
@@ -476,12 +490,17 @@
                     <div class="col-lg-12">
                         <div class="form-group mb-3">
                             <label for="detalle">Detalle</label>
-                            <textarea class="form-control" id="detalle" rows="3" placeholder="Ingrese detalles adicionales" required></textarea>
+                            <textarea class="form-control" id="detalle" rows="3" placeholder="Ingrese detalles adicionales" ></textarea>
+                            <p class="text-danger">Debe llenar este campo</p>
                         </div>
                     </div>
                 
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button  class="btn btn-primary" id="enviarFormulario">Enviar</button>
                 </form>
+
+                
+                </div>
+                
               </div>
             </div>
           </div>
@@ -497,6 +516,7 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
 </body>
 
 </html>
