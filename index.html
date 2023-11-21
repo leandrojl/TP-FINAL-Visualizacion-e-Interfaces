@@ -61,9 +61,7 @@
             color: white;
         } */
 
-        #confirmacionModal {
-            z-index: 1050 !important;
-        }
+        
     </style>
 </head>
 
@@ -421,7 +419,7 @@
             <div class="tab-pane fade" id="formulario" role="tabpanel" aria-labelledby="formulario-tab">
               <div class="container-fluid">
                 <h2>Formulario de Registro</h2>
-                <form class="row">
+                <form class="row" id="miFormulario">
                     <div class="col-lg-6">
                         <div class="form-row">
                             <div class="col-lg-12 col-md-12 mb-3">
@@ -496,12 +494,15 @@
                     </div>
                 
                     <button  class="btn btn-primary" id="enviarFormulario">Enviar</button>
+                    
                 </form>
 
                 
                 </div>
                 
               </div>
+
+              
             </div>
           </div>
 
@@ -516,6 +517,20 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.getElementById('enviarFormulario').addEventListener('click', function (event) {
+    // Prevenir el comportamiento predeterminado del formulario (evitar que se envíe)
+   
+
+    // Aquí puedes agregar lógica de validación del formulario si es necesario
+    // ...
+    $('#myModal').modal('hide');
+
+    $('#confirmacionModal').modal('show');
+    // Agregar un retraso de 2 segundos (2000 milisegundos) antes de cerrar el formulario y mostrar el modal
+    
+});
+</script>
  
 </body>
 
