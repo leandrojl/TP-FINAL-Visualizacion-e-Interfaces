@@ -9,26 +9,26 @@
 </head>
 
 <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Lilita+One&family=Montez&family=Montserrat&display=swap"
-        rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Lilita+One&family=Montez&family=Montserrat&display=swap"
+    rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-        <style>
-            .card:hover {
-                border: 2px solid blue; /* Cambia el color del borde al azul */
-            }
-            
-        </style>
+<style>
+    .card:hover {
+        border: 2px solid blue;
+        /* Cambia el color del borde al azul */
+    }
+</style>
 
 <body>
 
     <div class="container-fluid">
-        
+
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-4 mt-3 mb-3">
                 <a href="#">
@@ -36,131 +36,139 @@
                 </a>
             </div>
             <div class="col-lg-8 col-md-6 col-sm-8 mt-3 mb-3 d-none d-md-block">
-                
-                <div id="image-icon" class="d-flex justify-content-end">
-                    <img  src="imagenes/user icon.png" alt="icono-usuario" style="width: 60px; height: 50px;">
-                </div>
-                
-            </div>
-           
 
-            
-                
-                    <div class="col-lg-12 border rounded-2 p-4 bg-light" id="navbar-large">
-                        <div class="row g-5">
-                            <div class="col-lg col-md-4 col-sm-12 text-center uppercase-text "><a class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro" href="#solicitarTurno"> Solicitar Turno</a>
-                            </div>
-                            <div class="col-lg col-md-4 col-sm-12 text-center uppercase-text"><a class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro" data-toggle="modal" data-target="#myModal" href="#verTurnos"> Turnos Agendados</a></div>
-                            <div class="col-lg col-md-4 col-sm-12 text-center uppercase-text"><a class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro" href="#verEstudio"> Ver Estudios</a>
-                            </div>
-                            <div class="col-lg col-md-6 col-sm-12 text-center uppercase-text"><a class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro" href="#guardiaVirtual"> Guardia Virtual</a></div>
-                            <div class="col-lg col-md-6 col-sm-12 text-center uppercase-text"><a class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro" href="#miAfiliado"> Mi Afiliado</a>
-                            </div>
+                <div id="image-icon" class="d-flex justify-content-end">
+                    <img src="imagenes/user icon.png" alt="icono-usuario" style="width: 60px; height: 50px;">
+                </div>
+
+            </div>
+
+
+
+
+            <div class="col-lg-12 border rounded-2 p-4 bg-light" id="navbar-large">
+                <div class="row g-5">
+                    <div class="col-lg col-md-4 col-sm-12 text-center uppercase-text "><a
+                            class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro"
+                            href="#solicitarTurno"> Solicitar Turno</a>
+                    </div>
+                    <div class="col-lg col-md-4 col-sm-12 text-center uppercase-text"><a
+                            class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro" data-toggle="modal"
+                            data-target="#myModal" href="#verTurnos"> Turnos Agendados</a></div>
+                    <div class="col-lg col-md-4 col-sm-12 text-center uppercase-text"><a
+                            class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro" href="#verEstudio">
+                            Ver Estudios</a>
+                    </div>
+                    <div class="col-lg col-md-6 col-sm-12 text-center uppercase-text"><a
+                            class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro"
+                            href="#guardiaVirtual"> Guardia Virtual</a></div>
+                    <div class="col-lg col-md-6 col-sm-12 text-center uppercase-text"><a
+                            class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro" href="#miAfiliado">
+                            Mi Afiliado</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navbar hamburguesa para resoluciones de 1024px o menos -->
+            <nav class="navbar navbar-light bg-light" id="navbar-small">
+                <div class="container">
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <div class="navbar-nav">
+                            <a class="nav-item nav-link text-green-hover" href="#solicitarTurno">Solicitar Turno</a>
+                            <a class="nav-item nav-link text-green-hover" data-toggle="modal" data-target="#myModal"
+                                href="verTurnos">Turnos Agendados</a>
+                            <a class="nav-item nav-link text-green-hover" href="#verEstudio">Ver Estudios</a>
+                            <a class="nav-item nav-link text-green-hover" href="#guardiaVirtual">Guardia Virtual</a>
+                            <a class="nav-item nav-link text-green-hover" href="#miAfiliado">Mi Afiliado</a>
                         </div>
                     </div>
-                
-                    <!-- Navbar hamburguesa para resoluciones de 1024px o menos -->
-                    <nav class="navbar navbar-light bg-light" id="navbar-small">
-                        <div class="container">
-                            
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarNav">
-                                <div class="navbar-nav">
-                                    <a class="nav-item nav-link text-green-hover" href="#solicitarTurno">Solicitar Turno</a>
-                                    <a class="nav-item nav-link text-green-hover" data-toggle="modal" data-target="#myModal" href="verTurnos">Turnos Agendados</a>
-                                    <a class="nav-item nav-link text-green-hover" href="#verEstudio">Ver Estudios</a>
-                                    <a class="nav-item nav-link text-green-hover" href="#guardiaVirtual">Guardia Virtual</a>
-                                    <a class="nav-item nav-link text-green-hover" href="#miAfiliado">Mi Afiliado</a>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-                
-                
+                </div>
+            </nav>
+
+
 
             <main role="main" class="col-lg-12 col-md-12 ml-sm-auto px-4">
-                
 
-               
+
+
                 <div id="solicitarTurno" class="content-section">
-                    
+
                     <div class="col-lg-12 mt-5 mb-5 text-center">
                         <h1>Solicitar Turno</h1>
-                        
+
                     </div>
-                    
-                    
+
+
                     <div class="container ">
                         <div class="row ">
-                          
-                            <aside class="col-lg-12 col-md-12 col-sm-12  rounded-5 mb-3" >
-                                
-                                    <ul class="row list-unstyled  rounded-4 text-center">
-                                        <li class="col-lg ">
-                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-black active" id="btnArea"> Área</button>
-                                        </li>
-                                        <li class="col-lg ">
-                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-black" id="btnEspecialidad" >
-                                                Especialidad</button></li>
-                                        <li class="col-lg ">
-                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-black" id="btnLugar" >
-                                                Lugar</button></li>
-                                        <li class="col-lg ">
-                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-black" id="btnHorario" >
-                                                Horario</button></li>
-                                        <li class="col-lg">
-                                            <button class="btn btn-link text-decoration-none fs-5 fw-bold text-black" id="btnConfirmar">Confirmar
-                                                Turno</button></li>
-                                    </ul>
-                               
+
+                            <aside class="col-lg-12 col-md-12 col-sm-12  rounded-5 mb-3">
+
+                                <ul class="row list-unstyled  rounded-4 text-center">
+                                    <li class="col-lg ">
+                                        <button class="btn btn-link text-decoration-none fs-5 fw-bold text-black active"
+                                            id="btnArea"> Área</button>
+                                    </li>
+                                    <li class="col-lg ">
+                                        <button class="btn btn-link text-decoration-none fs-5 fw-bold text-black"
+                                            id="btnEspecialidad">
+                                            Especialidad</button>
+                                    </li>
+                                    <li class="col-lg ">
+                                        <button class="btn btn-link text-decoration-none fs-5 fw-bold text-black"
+                                            id="btnLugar">
+                                            Lugar</button>
+                                    </li>
+                                    <li class="col-lg ">
+                                        <button class="btn btn-link text-decoration-none fs-5 fw-bold text-black"
+                                            id="btnHorario">
+                                            Horario</button>
+                                    </li>
+                                    <li class="col-lg">
+                                        <button class="btn btn-link text-decoration-none fs-5 fw-bold text-black"
+                                            id="btnConfirmar">Confirmar
+                                            Turno</button>
+                                    </li>
+                                </ul>
+
                             </aside>
 
                             <!-- Contenido dinámico -->
-                            <div class="col-lg-12 col-md-12" >
-                                <div id="seccionArea" class="form-section bg-success-subtle rounded-4 p-3 ">
-                                    
-                                    <div class="container">
-                                        <div  class="row btn-group-toggle g-3" data-toggle="buttons">
-                                            <h3 class="h3 mt-3 mb-3">Seleccionar Área</h3>
-                                            <div class="col-lg-4 col-md-12 col-sm-4 btn btn-dark rounded-5 p-3">
-                                                <label >
-                                                    <input type="radio" name="areaOptions" id="consultaMedica" value="Consulta Medica"> Consulta Médica
-                                                </label>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-12 col-sm-4 btn  btn-danger rounded-5 p-3">
-                                                <label >
-                                                    <input type="radio" name="areaOptions" id="estudios" value="Estudios"> Estudios
-                                                </label>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-12 col-sm-4 btn btn-success rounded-5 p-3">
-                                                <label >
-                                                    <input type="radio" name="areaOptions" id="laboratorio" value="Laboratorio"> Laboratorio
-                                                </label>
-                                            </div>
-                                            
-                                            
-                                            
-                                            <div class="col-lg-12 mt-3">
-                                                <button class="btn btn-primary rounded-4" id="btnContinuarArea">Continuar</button>
-                                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <div class="row bg-success-subtle p-3" data-toggle="buttons">
+                                    <h3 class="col-12 h3 mt-3 mb-3">Seleccionar Área</h3>
+                                    <div class="btn-group-toggle d-lg-flex justify-content-center">
+                                        <div class="col-lg-4 col-md-10 btn btn-dark rounded-3 p-3 m-1">
+                                            <input type="radio" name="areaOptions" id="consultaMedica"
+                                                value="Consulta Medica" class="form-control"> Consulta Médica
+                                        </div>
+                                        <div class="col-lg-4 col-md-10  btn  btn-danger rounded-3 p-3 m-1">
+                                            <input type="radio" name="areaOptions" id="estudios" value="Estudios" class="form-control">
+                                            Estudios
+                                        </div>
+                                        <div class="col-lg-4 col-md-10  btn btn-success rounded-3 p-3 m-1">
+                                            <input type="radio" name="areaOptions" id="laboratorio" value="Laboratorio" class="form-control">
+                                            Laboratorio
                                         </div>
                                     </div>
-                                    
-                                    
-                                </div>
 
+                                    <div class="col-lg-12 mt-3">
+                                        <button class="btn btn-primary rounded-4"
+                                            id="btnContinuarArea">Continuar</button>
+                                    </div>
+                                </div>
                                 <div id="seccionEspecialidad" class="row form-section bg-success-subtle rounded-4 p-3">
                                     <h3 class="h3 mt-3 mb-3">Seleccionar Especialidad</h3>
-                                
-                                    <div class="col-lg-6 mt-3"> 
+
+                                    <div class="col-lg-6 mt-3">
                                         <div class="form-group">
                                             <label for="listaEspecialidades">Especialidades:</label>
-                                            <select class="form-control" style="width:80%"; id="listaEspecialidades">
+                                            <select class="form-control" style="width:80%" ; id="listaEspecialidades">
                                                 <!-- Agrega aquí las especialidades desde tu JSON -->
                                                 <option value="traumatologia">Traumatología</option>
                                                 <option value="cardiologia">Cardiología</option>
@@ -169,109 +177,111 @@
                                             </select>
                                         </div>
                                     </div>
-                                
-                                    <div class="col-lg-6 mt-3"> 
+
+                                    <div class="col-lg-6 mt-3">
                                         <div class="form-group">
                                             <label for="listaNumeros">Seleccionar Número:</label>
-                                            <select class="form-control" style="width:80%"; id="listaNumeros" disabled>
-                                               
+                                            <select class="form-control" style="width:80%" ; id="listaNumeros" disabled>
+
                                             </select>
                                         </div>
                                     </div>
-                                
+
                                     <div class="col-lg-12 mt-3">
-                                        <button class="btn btn-primary rounded-4" id="btnContinuarEspecialidad">Continuar</button>
+                                        <button class="btn btn-primary rounded-4"
+                                            id="btnContinuarEspecialidad">Continuar</button>
                                     </div>
                                 </div>
-                                
+
 
                                 <div id="seccionLugar" class="form-section bg-success-subtle rounded-4 p-3">
                                     <h3 class="h3 mt-3 mb-3">Seleccionar Lugar</h3>
                                     <div class="row g-2">
                                         <!-- Card 1: Hospital Italiano de San Justo -->
                                         <div class="col-lg-4 col-md-4 col-sm-12 card">
-                                            
+
                                             <div class="card-body">
                                                 <h5 class="card-title">Hospital Italiano de San Justo</h5>
                                                 <p class="card-text">Dirección: Av. Pres. Perón 2576, San Justo, Buenos
                                                     Aires</p>
-                                                
+
                                             </div>
                                         </div>
 
-                                        
+
                                         <div class="col-lg-4 col-md-4 col-sm-12 card">
-                                            
+
                                             <div class="card-body">
                                                 <h5 class="card-title">Hospital Italiano de Almagro</h5>
                                                 <p class="card-text">Dirección: Gascón 450, C1181ACH CABA</p>
-                                                
+
                                             </div>
                                         </div>
 
-                                        
+
                                         <div class="col-lg-4 col-md-4 col-sm-12 card">
-                                            
+
                                             <div class="card-body">
                                                 <h5 class="card-title">Hospital Italiano de Ramos Mejía</h5>
-                                                <p class="card-text">Dirección: Urquiza 609, Ramos Mejía, Buenos Aires</p>
-                                                
+                                                <p class="card-text">Dirección: Urquiza 609, Ramos Mejía, Buenos Aires
+                                                </p>
+
                                             </div>
                                         </div>
                                         <div class="col-lg-12 text-start">
-                                            <button class="btn btn-primary mt-3 rounded-4"  id="btnContinuarLugar"
-                                        >Continuar</button>
+                                            <button class="btn btn-primary mt-3 rounded-4"
+                                                id="btnContinuarLugar">Continuar</button>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
 
                                 <div id="seccionHorario" class="row form-section  bg-success-subtle rounded-4 p-3">
                                     <h3 class="h3 mt-3 mb-3">Seleccionar Horario</h3>
                                     <div class="row g-3">
-                                        
+
                                         <div class="col-lg-3 card">
-                                            
+
                                             <div class="card-body text-center fw-bold">
                                                 <h5 class="card-title">Miercoles, 19hs</h5>
-                                                
-                                                
+
+
                                             </div>
                                         </div>
 
-                                      
+
                                         <div class="col-lg-3 card">
-                                            
+
                                             <div class="card-body text-center fw-bold">
                                                 <h5 class="card-title">Jueves, 21hs</h5>
-                                                
-                                                
+
+
                                             </div>
                                         </div>
                                         <div class="col-lg-3 card">
-                                            
+
                                             <div class="card-body text-center fw-bold">
                                                 <h5 class="card-title">Viernes, 21hs</h5>
-                                                
-                                                
+
+
                                             </div>
                                         </div>
                                         <div class="col-lg-3 card">
-                                            
+
                                             <div class="card-body text-center fw-bold">
                                                 <h5 class="card-title">Sabado, 21hs</h5>
-                                                
-                                                
+
+
                                             </div>
                                         </div>
 
                                         <div class="col-lg-12 text-start">
-                                            <button class="btn btn-primary mt-3 rounded-4"  id="btnContinuarHorario"
-                                        disabled>Continuar</button>
+                                            <button class="btn btn-primary mt-3 rounded-4" id="btnContinuarHorario"
+                                                disabled>Continuar</button>
                                         </div>
-                                        
+
                                     </div>
-                                    
+
                                 </div>
 
                                 <div id="seccionConfirmar" class="form-section bg-success-subtle rounded-4 p-3 mb-3">
@@ -292,21 +302,24 @@
                                             <span id="lugarSeleccionado" class="fs-5"></span>
                                         </div>
                                         <div class="col-lg-2 col-md-12 text-center mt-1 mb-1">
-                                            <p class="fs-4 fw-bold">Horario: </span></p> 
+                                            <p class="fs-4 fw-bold">Horario: </span></p>
                                             <span id="horarioSeleccionado" class="fs-5"></span>
                                         </div>
                                         <div class="col-lg-12 col-md-12 text-end mt-2">
-                                            <button class="btn btn-primary rounded-4" id="confirmarTurno">Confirmar</button>
+                                            <button class="btn btn-primary rounded-4"
+                                                id="confirmarTurno">Confirmar</button>
                                         </div>
-                                        
+
                                     </div>
 
-                                    <div class="modal fade" id="confirmacionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="confirmacionModal" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalLabel">Turno Confirmado</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
@@ -314,17 +327,18 @@
                                                     <p class="fw-bold fs-4">Su turno ha sido confirmado</p>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Cerrar</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
+
+
+
+
+
+
                                 </div>
                             </div>
 
@@ -333,18 +347,18 @@
                 </div>
             </main>
         </div>
-            
-            
-                
-                
 
-                
-            
-       
-    
-            
-            
-        </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -353,7 +367,7 @@
 
     <script>
         $(document).ready(function () {
-            
+
             // Variable para almacenar la información seleccionada por el usuario
             var seleccionUsuario = {
                 area: null,
@@ -371,11 +385,11 @@
                 $('#btnContinuar' + seccionActual).prop('disabled', false);
             }
             $("#confirmarTurno").prop("disabled", false);
-            
-        $("#confirmarTurno").click(function() {
-            $("#confirmacionModal").modal("show");
-        });
-    
+
+            $("#confirmarTurno").click(function () {
+                $("#confirmacionModal").modal("show");
+            });
+
 
             ocultarTodasLasSecciones();
             $('#seccionArea').show();
