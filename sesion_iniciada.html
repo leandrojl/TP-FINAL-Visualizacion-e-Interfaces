@@ -23,15 +23,56 @@
         border: 2px solid blue;
         /* Cambia el color del borde al azul */
     }
+
+    .seleccionable {
+        position: relative;
+        border: 2px solid transparent;
+        cursor: pointer;
+        background-color: white !important;
+    }
+
+    .seleccionable:hover {
+        border-color: #007bff;
+        background-color: white;
+        /* Cambia el color del borde al pasar el ratón sobre el elemento */
+    }
+
+    .seleccionable input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .seleccionable input[type="radio"]:checked+.card-body {
+        border: 2px solid #007bff;
+        /* Cambia el color del borde cuando el radio button está seleccionado */
+    }
+
+    .seleccionable:active {
+        border: 2px solid #007bff;
+        background-color: white !important;
+    }
+
+    .seleccionable:focus {
+        background-color: white !important;
+    }
+
+    .seleccionable {
+        cursor: pointer;
+        transition: box-shadow 0.3s;
+    }
+
+    .seleccionable.seleccionada {
+        box-shadow: 0 0 5px 2px #007bff;
+        /* Puedes ajustar el estilo de selección según tus preferencias */
+    }
 </style>
 
 <body>
-
     <div class="container-fluid">
-
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-4 mt-3 mb-3">
-                <a href="#">
+                <a href="sesion_iniciada.html">
                     <img src="imagenes/logo-italiano.jpg" alt="" class="img-fluid">
                 </a>
             </div>
@@ -42,33 +83,32 @@
                 </div>
 
             </div>
-
-
-
-
             <div class="col-lg-12 border rounded-2 p-4 bg-light" id="navbar-large">
                 <div class="row g-5">
-                    <div class="col-lg col-md-4 col-sm-12 text-center uppercase-text "><a
-                            class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro"
+                    <div class="col-lg col-md-4 col-sm-12 text-center uppercase-text ">
+                        <a class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro nav-link"
                             href="#solicitarTurno"> Solicitar Turno</a>
                     </div>
-                    <div class="col-lg col-md-4 col-sm-12 text-center uppercase-text"><a
-                            class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro" data-toggle="modal"
-                            data-target="#myModal" href="#verTurnos"> Turnos Agendados</a></div>
-                    <div class="col-lg col-md-4 col-sm-12 text-center uppercase-text"><a
-                            class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro" href="#verEstudio">
+                    <div class="col-lg col-md-4 col-sm-12 text-center uppercase-text">
+                        <a class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro nav-link"
+                            href="#verTurnosAgendados">Turnos Agendados</a>
+                    </div>
+                    <div class="col-lg col-md-4 col-sm-12 text-center uppercase-text">
+                        <a class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro nav-link"
+                            href="#verEstudio">
                             Ver Estudios</a>
                     </div>
-                    <div class="col-lg col-md-6 col-sm-12 text-center uppercase-text"><a
-                            class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro"
-                            href="#guardiaVirtual"> Guardia Virtual</a></div>
-                    <div class="col-lg col-md-6 col-sm-12 text-center uppercase-text"><a
-                            class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro" href="#miAfiliado">
+                    <div class="col-lg col-md-6 col-sm-12 text-center uppercase-text">
+                        <a class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro nav-link"
+                            href="#guardiaVirtual"> Guardia Virtual</a>
+                    </div>
+                    <div class="col-lg col-md-6 col-sm-12 text-center uppercase-text">
+                        <a class="text-decoration-none fs-5 fw-bold text-green-hover texto-negro nav-link"
+                            href="#miAfiliado">
                             Mi Afiliado</a>
                     </div>
                 </div>
             </div>
-
             <!-- Navbar hamburguesa para resoluciones de 1024px o menos -->
             <nav class="navbar navbar-light bg-light" id="navbar-small">
                 <div class="container">
@@ -80,8 +120,8 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <div class="navbar-nav">
                             <a class="nav-item nav-link text-green-hover" href="#solicitarTurno">Solicitar Turno</a>
-                            <a class="nav-item nav-link text-green-hover" data-toggle="modal" data-target="#myModal"
-                                href="verTurnos">Turnos Agendados</a>
+                            <a class="nav-item nav-link text-green-hover" href="#verTurnosAgendados">Turnos
+                                Agendados</a>
                             <a class="nav-item nav-link text-green-hover" href="#verEstudio">Ver Estudios</a>
                             <a class="nav-item nav-link text-green-hover" href="#guardiaVirtual">Guardia Virtual</a>
                             <a class="nav-item nav-link text-green-hover" href="#miAfiliado">Mi Afiliado</a>
@@ -89,13 +129,7 @@
                     </div>
                 </div>
             </nav>
-
-
-
             <main role="main" class="col-lg-12 col-md-12 ml-sm-auto px-4">
-
-
-
                 <div id="solicitarTurno" class="content-section">
 
                     <div class="col-lg-12 mt-5 mb-5 text-center">
@@ -111,7 +145,7 @@
 
                                 <ul class="row list-unstyled  rounded-4 text-center">
                                     <li class="col-lg ">
-                                        <button class="btn btn-link text-decoration-none fs-5 fw-bold text-black active"
+                                        <button class="btn btn-link text-decoration-none fs-5 fw-bold text-black focus"
                                             id="btnArea"> Área</button>
                                     </li>
                                     <li class="col-lg ">
@@ -140,29 +174,33 @@
 
                             <!-- Contenido dinámico -->
                             <div class="col-lg-12 col-md-12">
-                                <div class="row bg-success-subtle p-3" data-toggle="buttons">
-                                    <h3 class="col-12 h3 mt-3 mb-3">Seleccionar Área</h3>
-                                    <div class="btn-group-toggle d-lg-flex justify-content-center">
-                                        <div class="col-lg-4 col-md-10 btn btn-dark rounded-3 p-3 m-1">
+                                <div class="row bg-success-subtle p-3 rounded-3 form-section" id="seccionArea">
+                                    <h3 class="col-12 h3 mt-3 mb-3 text-center text-lg-start">Seleccionar Área</h3>
+                                    <div class="col-lg-12 btn-group-toggle d-lg-flex justify-content-center"
+                                        data-toggle="buttons">
+                                        <label
+                                            class="btn btn-dark rounded-3 p-3 col-12 col-lg-4 mx-1 active d-block mb-3"
+                                            aria-pressed="true">
                                             <input type="radio" name="areaOptions" id="consultaMedica"
-                                                value="Consulta Medica" class="form-control"> Consulta Médica
-                                        </div>
-                                        <div class="col-lg-4 col-md-10  btn  btn-danger rounded-3 p-3 m-1">
-                                            <input type="radio" name="areaOptions" id="estudios" value="Estudios" class="form-control">
-                                            Estudios
-                                        </div>
-                                        <div class="col-lg-4 col-md-10  btn btn-success rounded-3 p-3 m-1">
-                                            <input type="radio" name="areaOptions" id="laboratorio" value="Laboratorio" class="form-control">
-                                            Laboratorio
-                                        </div>
+                                                value="Consulta Medica" class="form-control" checked> Consulta Médica
+                                        </label>
+                                        <label class="btn btn-danger rounded-3 p-3 col-12 col-lg-4 mx-1 d-block mb-3">
+                                            <input type="radio" name="areaOptions" id="estudios" value="Estudios"
+                                                class="form-control"> Estudios
+                                        </label>
+                                        <label class="btn btn-success rounded-3 p-3 col-12 col-lg-4 mx-1 d-block mb-3">
+                                            <input type="radio" name="areaOptions" id="laboratorio" value="Laboratorio"
+                                                class="form-control"> Laboratorio
+                                        </label>
                                     </div>
-
-                                    <div class="col-lg-12 mt-3">
-                                        <button class="btn btn-primary rounded-4"
+                                    <div class="col-lg-12 mt-3 ps-md-2 ps-lg-0">
+                                        <button class="btn btn-primary rounded-3 m-1"
                                             id="btnContinuarArea">Continuar</button>
                                     </div>
                                 </div>
-                                <div id="seccionEspecialidad" class="row form-section bg-success-subtle rounded-4 p-3">
+
+
+                                <div id="seccionEspecialidad" class="row form-section bg-success-subtle rounded-3 p-3">
                                     <h3 class="h3 mt-3 mb-3">Seleccionar Especialidad</h3>
 
                                     <div class="col-lg-6 mt-3">
@@ -188,130 +226,236 @@
                                     </div>
 
                                     <div class="col-lg-12 mt-3">
-                                        <button class="btn btn-primary rounded-4"
+                                        <button class="btn btn-primary rounded-3"
                                             id="btnContinuarEspecialidad">Continuar</button>
                                     </div>
                                 </div>
 
 
-                                <div id="seccionLugar" class="form-section bg-success-subtle rounded-4 p-3">
-                                    <h3 class="h3 mt-3 mb-3">Seleccionar Lugar</h3>
-                                    <div class="row g-2">
-                                        <!-- Card 1: Hospital Italiano de San Justo -->
-                                        <div class="col-lg-4 col-md-4 col-sm-12 card">
-
-                                            <div class="card-body">
-                                                <h5 class="card-title">Hospital Italiano de San Justo</h5>
-                                                <p class="card-text">Dirección: Av. Pres. Perón 2576, San Justo, Buenos
-                                                    Aires</p>
-
+                                <div id="seccionLugar" class="form-section">
+                                    <div
+                                        class="bg-success-subtle rounded-3 p-3 d-md-flex flex-md-column align-items-md-center">
+                                        <h3 class="h3 mt-3 mb-3 text-center text-lg-start">Seleccionar Lugar</h3>
+                                        <div class="row g-2 btn-group-toggle col-md-10 col-lg-12" data-toggle="buttons">
+                                            <!-- Card 1: Hospital Italiano de San Justo -->
+                                            <label
+                                                class="col-lg-3 col-md-5 col-sm-12 card seleccionable btn card-body mx-1"
+                                                role="button">
+                                                <input type="radio" name="lugarOptions" />
+                                                <div>
+                                                    <h5 class="card-title">Hospital Italiano de San Justo</h5>
+                                                    <p class="card-text">Dirección: Av. Pres. Perón 2576, San Justo,
+                                                        Buenos
+                                                        Aires</p>
+                                                </div>
+                                                <div class="col-lg-12 embed-responsive embed-responsive-16by9">
+                                                    <iframe class="embed-responsive-item"
+                                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.442452467518!2d-58.569686423500855!3d-34.668781060938485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc7cd14129b61%3A0x78f6eab9f8572beb!2sHospital%20Italiano%20de%20San%20Justo%20Agust%C3%ADn%20Rocca!5e0!3m2!1ses-419!2sar!4v1700666944940!5m2!1ses-419!2sar"
+                                                        width="150" height="50" style="border:0;" allowfullscreen=""
+                                                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                                    </iframe>
+                                                </div>
+                                            </label>
+                                            <!-- Card 2: Hospital Italiano de Almagro -->
+                                            <label
+                                                class="col-lg-3 col-md-10 col-sm-12 card seleccionable btn card-body mx-1"
+                                                role="button" for="lugarOptions">
+                                                <input type="radio" name="lugarOptions" id="lugarOptions" />
+                                                <div>
+                                                    <h5 class="card-title">Hospital Italiano de Almagro</h5>
+                                                    <p class="card-text">Dirección: Gascón 450, C1181ACH CABA</p>
+                                                </div>
+                                                <div class="col-lg-12 embed-responsive embed-responsive-16by9">
+                                                    <iframe class="embed-responsive-item"
+                                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.442452467518!2d-58.569686423500855!3d-34.668781060938485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc7cd14129b61%3A0x78f6eab9f8572beb!2sHospital%20Italiano%20de%20San%20Justo%20Agust%C3%ADn%20Rocca!5e0!3m2!1ses-419!2sar!4v1700666944940!5m2!1ses-419!2sar"
+                                                        width="150" height="50" style="border:0;" allowfullscreen=""
+                                                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                                    </iframe>
+                                                </div>
+                                            </label>
+                                            <!-- Card 3: Hospital Italiano de Ramos Mejía -->
+                                            <label
+                                                class="col-lg-3 col-md-10 col-sm-12 card seleccionable btn card-body mx-1"
+                                                role="button">
+                                                <input type="radio" name="lugarOptions" />
+                                                <div>
+                                                    <h5 class="card-title">Hospital Italiano de Ramos Mejía</h5>
+                                                    <p class="card-text">Dirección: Urquiza 609, Ramos Mejía, Buenos
+                                                        Aires
+                                                    </p>
+                                                </div>
+                                                <div class="col-lg-12 embed-responsive embed-responsive-16by9">
+                                                    <iframe class="embed-responsive-item"
+                                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.442452467518!2d-58.569686423500855!3d-34.668781060938485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc7cd14129b61%3A0x78f6eab9f8572beb!2sHospital%20Italiano%20de%20San%20Justo%20Agust%C3%ADn%20Rocca!5e0!3m2!1ses-419!2sar!4v1700666944940!5m2!1ses-419!2sar"
+                                                        width="150" height="50" style="border:0;" allowfullscreen=""
+                                                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                                    </iframe>
+                                                </div>
+                                            </label>
+                                            <div class="col-lg-12 text-center text-lg-start">
+                                                <button class="btn btn-primary mt-3 rounded-3"
+                                                    id="btnContinuarLugar">Continuar</button>
                                             </div>
-                                        </div>
-
-
-                                        <div class="col-lg-4 col-md-4 col-sm-12 card">
-
-                                            <div class="card-body">
-                                                <h5 class="card-title">Hospital Italiano de Almagro</h5>
-                                                <p class="card-text">Dirección: Gascón 450, C1181ACH CABA</p>
-
-                                            </div>
-                                        </div>
-
-
-                                        <div class="col-lg-4 col-md-4 col-sm-12 card">
-
-                                            <div class="card-body">
-                                                <h5 class="card-title">Hospital Italiano de Ramos Mejía</h5>
-                                                <p class="card-text">Dirección: Urquiza 609, Ramos Mejía, Buenos Aires
-                                                </p>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 text-start">
-                                            <button class="btn btn-primary mt-3 rounded-4"
-                                                id="btnContinuarLugar">Continuar</button>
                                         </div>
                                     </div>
-
                                 </div>
 
-                                <div id="seccionHorario" class="row form-section  bg-success-subtle rounded-4 p-3">
-                                    <h3 class="h3 mt-3 mb-3">Seleccionar Horario</h3>
-                                    <div class="row g-3">
 
-                                        <div class="col-lg-3 card">
-
-                                            <div class="card-body text-center fw-bold">
-                                                <h5 class="card-title">Miercoles, 19hs</h5>
-
-
+                                <div id="seccionHorario" class="row form-section form- bg-success-subtle rounded-4 p-3">
+                                    <div class="border-1">
+                                        <h3 class="h3 mt-3 mb-3 text-center text-lg-start">Seleccionar Horario</h3>
+                                        <hr>
+                                    </div>
+                                    <div
+                                        class="d-md-flex flex-wrap p-0 gap-1 justify-content-center justify-content-lg-evenly btn-group">
+                                        <div class="col-md-5 col-lg-3 card p-0 mb-2 seleccionable btn" id="tarjeta1">
+                                            <div class="card-header">
+                                                <p class="h4 text-center card-title fw-bold">11 de Noviembre</p>
+                                                <p class="h6 text-center text-dark-emphasis">19:00hs</p>
+                                            </div>
+                                            <div
+                                                class="card-body fw-bold text-center d-flex flex-column align-items-center justify-content-center">
+                                                <div class="col-5">
+                                                    <img src="imagenes/doctor_select_5.jpg" alt="doctor_sakamoto"
+                                                        class="img-fluid img-thumbnail" width="63px">
+                                                </div>
+                                                <p class="h5">Dr. Sumo Samurai</p>
+                                                <span class="h6 text-dark-emphasis">Cardiologo</span>
                                             </div>
                                         </div>
-
-
-                                        <div class="col-lg-3 card">
-
-                                            <div class="card-body text-center fw-bold">
-                                                <h5 class="card-title">Jueves, 21hs</h5>
-
-
+                                        <div class="col-md-5 col-lg-3 card p-0 mb-2 seleccionable btn" id="tarjeta2">
+                                            <div class="card-header">
+                                                <p class="h4 text-center card-title fw-bold">17 de Noviembre</p>
+                                                <p class="h6 text-center text-dark-emphasis">09:00hs</p>
+                                            </div>
+                                            <div
+                                                class="card-body fw-bold text-center d-flex flex-column align-items-center justify-content-center">
+                                                <div class="col-5">
+                                                    <img src="imagenes/doctor_select_2.jpg" alt="doctor_sakamoto"
+                                                        class="img-fluid img-thumbnail">
+                                                </div>
+                                                <p class="h5">Dr. Kamikaze Banzai</p>
+                                                <span class="h6 text-dark-emphasis">Cardiologo</span>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3 card">
-
-                                            <div class="card-body text-center fw-bold">
-                                                <h5 class="card-title">Viernes, 21hs</h5>
-
-
+                                        <div class="col-md-5 col-lg-3 card p-0 mb-2 seleccionable btn" id="tarjeta3">
+                                            <div class="card-header">
+                                                <p class="h4 text-center card-title fw-bold">05 de Diciembre</p>
+                                                <p class="h6 text-center text-dark-emphasis">13:25hs</p>
+                                            </div>
+                                            <div
+                                                class="card-body fw-bold text-center d-flex flex-column align-items-center justify-content-center">
+                                                <div class="col-5">
+                                                    <img src="imagenes/doctor_select_3.jpg" alt="doctor_sakamoto"
+                                                        class="img-fluid img-thumbnail">
+                                                </div>
+                                                <p class="h5">Dr. Mitsubishi Toyota</p>
+                                                <span class="h6 text-dark-emphasis">Cardiologo</span>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3 card">
-
-                                            <div class="card-body text-center fw-bold">
-                                                <h5 class="card-title">Sabado, 21hs</h5>
-
-
+                                        <div class="col-md-5 col-lg-3 card p-0 mb-2 seleccionable btn" id="tarjeta4">
+                                            <div class="card-header">
+                                                <p class="h4 text-center card-title fw-bold">21 de Diciembre</p>
+                                                <p class="h6 text-center text-dark-emphasis">12:45hs</p>
+                                            </div>
+                                            <div
+                                                class="card-body fw-bold text-center d-flex flex-column align-items-center justify-content-center">
+                                                <div class="col-5">
+                                                    <img src="imagenes/doctor_select_4.jpg" alt="doctor_sakamoto"
+                                                        class="img-fluid img-thumbnail" width="63px">
+                                                </div>
+                                                <p class="h5">Dr. Shiitake Kimono</p>
+                                                <span class="h6 text-dark-emphasis">Cardiologo</span>
                                             </div>
                                         </div>
-
-                                        <div class="col-lg-12 text-start">
-                                            <button class="btn btn-primary mt-3 rounded-4" id="btnContinuarHorario"
+                                        <div class="col-lg-12 text-center text-lg-start p-0">
+                                            <button class="btn btn-primary mt-3 rounded-3" id="btnContinuarHorario"
                                                 disabled>Continuar</button>
                                         </div>
-
                                     </div>
-
                                 </div>
 
                                 <div id="seccionConfirmar" class="form-section bg-success-subtle rounded-4 p-3 mb-3">
                                     <div class="row">
-                                        <div class="col-lg-2 col-md-12 text-center mt-1 mb-1">
-                                            <h3 class="h3 fw-bold mt-3 mb-3">Turno:</h3>
+                                        <div class="col-md-12 text-center mt-1 mb-1">
+                                            <h1 class="h1 fw-bold mt-3 mb-3">Resumen de datos</h1>
                                         </div>
-                                        <div class="col-lg-2 col-md-12 text-center mt-1 mb-1">
-                                            <p class="fs-4 fw-bold">Consulta: </span></p>
-                                            <span id="tipoConsultaSeleccionado" class="fs-5"></span>
-                                        </div>
-                                        <div class="col-lg-2 col-md-12 text-center mt-1 mb-1">
-                                            <p class="fs-4 fw-bold">Especialidad: </p>
-                                            <span id="especialidadSeleccionada" class="fs-5"></span>
-                                        </div>
-                                        <div class="col-lg-2 col-md-12 text-center mt-1 mb-1">
-                                            <p class="fs-4 fw-bold">Lugar: </span></p>
-                                            <span id="lugarSeleccionado" class="fs-5"></span>
-                                        </div>
-                                        <div class="col-lg-2 col-md-12 text-center mt-1 mb-1">
-                                            <p class="fs-4 fw-bold">Horario: </span></p>
-                                            <span id="horarioSeleccionado" class="fs-5"></span>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 text-end mt-2">
-                                            <button class="btn btn-primary rounded-4"
-                                                id="confirmarTurno">Confirmar</button>
-                                        </div>
-
                                     </div>
-
+                                    <hr>
+                                    <div class="row">
+                                        <div
+                                            class="col-md-12 text-center mt-1 mb-1 d-flex flex-column align-items-center">
+                                            <p class="fs-4 fw-bold">AREA</p>
+                                            <input type="text" class="form-control text-center col-md-8"
+                                                value="Consulta Medica" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div
+                                            class="col-md-12 text-center mt-1 mb-1 d-flex flex-column align-items-center">
+                                            <p class="fs-4 fw-bold">ESPECIALIDAD</p>
+                                            <input type="text" class="form-control text-center mb-1 col-md-8"
+                                                value="Traumatologia" disabled>
+                                            <input type="text" class="form-control text-center col-md-8"
+                                                value="Miembro superior" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div
+                                            class="col-lg-6 col-md-12 text-center mt-1 mb-1 d-md-flex flex-column align-items-center">
+                                            <p class="fs-4 fw-bold">LUGAR</p>
+                                            <label
+                                                class="col-lg-10 col-md-5 col-sm-12 card seleccionable btn card-body mx-1 disabled d-block"
+                                                role="button">
+                                                <input type="radio" name="lugarOptions" />
+                                                <div>
+                                                    <h5 class="card-title">Hospital Italiano de San Justo</h5>
+                                                    <p class="card-text">Dirección: Av. Pres. Perón 2576, San Justo,
+                                                        Buenos
+                                                        Aires</p>
+                                                </div>
+                                                <div class="col-lg-12 embed-responsive embed-responsive-16by9">
+                                                    <iframe class="embed-responsive-item"
+                                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.442452467518!2d-58.569686423500855!3d-34.668781060938485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc7cd14129b61%3A0x78f6eab9f8572beb!2sHospital%20Italiano%20de%20San%20Justo%20Agust%C3%ADn%20Rocca!5e0!3m2!1ses-419!2sar!4v1700666944940!5m2!1ses-419!2sar"
+                                                        width="150" height="50" style="border:0;" allowfullscreen=""
+                                                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                                    </iframe>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div
+                                            class="col-md-12 text-center mt-1 mb-1 d-flex flex-column align-items-center">
+                                            <p class="fs-4 fw-bold">HORARIO</p>
+                                            <div class="col-lg-5 col-md-5 col-lg-3 card p-0 mb-2 seleccionable btn disabled"
+                                                id="tarjeta1">
+                                                <div class="card-header">
+                                                    <p class="h4 text-center card-title fw-bold">11 de Noviembre</p>
+                                                    <p class="h6 text-center text-dark-emphasis">19:00hs</p>
+                                                </div>
+                                                <div
+                                                    class="card-body fw-bold text-center d-flex flex-column align-items-center justify-content-center">
+                                                    <div class="col-5">
+                                                        <img src="imagenes/doctor_select_5.jpg" alt="doctor_sakamoto"
+                                                            class="img-fluid img-thumbnail" width="63px">
+                                                    </div>
+                                                    <p class="h5">Dr. Sumo Samurai</p>
+                                                    <span class="h6 text-dark-emphasis">Cardiologo</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 text-center mt-2 d-flex flex-column">
+                                            <button
+                                                class="btn btn-success rounded-3 btn-lg col-8 align-self-center mb-3"
+                                                id="confirmarTurno" type="button">CONFIRMAR</button>
+                                            <hr>
+                                            <button class="btn btn-dark rounded-3 btn-sm col-5 align-self-center"
+                                                id="editarTurno" type="button">Editar</button>
+                                        </div>
+                                    </div>
                                     <div class="modal fade" id="confirmacionModal" tabindex="-1" role="dialog"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
@@ -327,37 +471,317 @@
                                                     <p class="fw-bold fs-4">Su turno ha sido confirmado</p>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Cerrar</button>
+                                                    <a class="nav-link btn btn-secondary"
+                                                        data-dismiss="modal" href="#verTurnosAgendados">Cerrar</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-
-
-
-
-
                                 </div>
                             </div>
 
                         </div>
                     </div>
                 </div>
+                <div id="verTurnosAgendados" class="content-section">
+
+                    <div class="col-lg-12 mt-5 mb-5 text-center">
+                        <h1>Mis turnos</h1>
+                    </div>
+
+
+                    <div class="container-fluid">
+                        <div class="row ">
+                            <div class="col-lg-12 col-md-12">
+
+                                <div class="row justify-content-around">
+                                    <div class="col-lg-4">
+                                        <div id="" class="bg-success-subtle rounded-4 p-3 mb-3">
+                                            <div class="row">
+                                                <div
+                                                    class="col-md-12 text-center mt-1 mb-1 d-flex flex-column align-items-center">
+                                                    <input type="text" class="form-control text-center col-md-8"
+                                                        value="Consulta Medica" disabled>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div
+                                                    class="col-md-12 text-center mt-1 mb-1 d-flex flex-column align-items-center">
+                                                    <input type="text" class="form-control text-center mb-1 col-md-8"
+                                                        value="Traumatologia" disabled>
+                                                    <input type="text" class="form-control text-center col-md-8"
+                                                        value="Miembro superior" disabled>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row justify-content-center">
+                                                <div
+                                                    class="col-lg-12 col-md-12 text-center mt-1 mb-1 d-md-flex flex-column align-items-center">
+                                                    <label
+                                                        class="col-lg-10 col-md-5 col-sm-12 card seleccionable btn card-body mx-1 disabled d-block"
+                                                        role="button">
+                                                        <input type="radio" name="lugarOptions" />
+                                                        <div>
+                                                            <h5 class="card-title">Hospital Italiano de San Justo</h5>
+                                                            <p class="card-text">Dirección: Av. Pres. Perón 2576, San Justo,
+                                                                Buenos
+                                                                Aires</p>
+                                                        </div>
+                                                        <div class="col-lg-12 embed-responsive embed-responsive-16by9">
+                                                            <iframe class="embed-responsive-item"
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.442452467518!2d-58.569686423500855!3d-34.668781060938485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc7cd14129b61%3A0x78f6eab9f8572beb!2sHospital%20Italiano%20de%20San%20Justo%20Agust%C3%ADn%20Rocca!5e0!3m2!1ses-419!2sar!4v1700666944940!5m2!1ses-419!2sar"
+                                                                width="150" height="50" style="border:0;" allowfullscreen=""
+                                                                loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                                            </iframe>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div
+                                                    class="col-md-12 text-center mt-1 mb-1 d-flex flex-column align-items-center">
+                                                    <div class="col-lg-10 col-md-5 col-lg-3 card p-0 mb-2 seleccionable btn disabled"
+                                                        id="tarjeta1">
+                                                        <div class="card-header">
+                                                            <p class="h4 text-center card-title fw-bold">11 de Noviembre</p>
+                                                            <p class="h6 text-center text-dark-emphasis">19:00hs</p>
+                                                        </div>
+                                                        <div
+                                                            class="card-body fw-bold text-center d-flex flex-column align-items-center justify-content-center">
+                                                            <p class="h5">Dr. Sumo Samurai</p>
+                                                            <span class="h6 text-dark-emphasis">Cardiologo</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 text-center mt-2 d-flex flex-column">
+                                                    <button
+                                                        class="btn btn-danger rounded-3 btn-lg col-8 align-self-center mb-3"
+                                                        id="confirmarTurno" type="button">CANCELAR</button>
+                                                </div>
+                                                <div class="modal fade" id="confirmacionModal" tabindex="-1" role="dialog"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Turno
+                                                                    Confirmado</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body text-center">
+                                                                <p class="fw-bold fs-4">Su turno ha sido confirmado</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Cerrar</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div id="" class="bg-success-subtle rounded-4 p-3 mb-3">
+                                            <div class="row">
+                                                <div
+                                                    class="col-md-12 text-center mt-1 mb-1 d-flex flex-column align-items-center">
+                                                    <input type="text" class="form-control text-center col-md-8"
+                                                        value="Consulta Medica" disabled>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div
+                                                    class="col-md-12 text-center mt-1 mb-1 d-flex flex-column align-items-center">
+                                                    <input type="text" class="form-control text-center mb-1 col-md-8"
+                                                        value="Traumatologia" disabled>
+                                                    <input type="text" class="form-control text-center col-md-8"
+                                                        value="Miembro superior" disabled>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row justify-content-center">
+                                                <div
+                                                    class="col-lg-12 col-md-12 text-center mt-1 mb-1 d-md-flex flex-column align-items-center">
+                                                    <label
+                                                        class="col-lg-10 col-md-5 col-sm-12 card seleccionable btn card-body mx-1 disabled d-block"
+                                                        role="button">
+                                                        <input type="radio" name="lugarOptions" />
+                                                        <div>
+                                                            <h5 class="card-title">Hospital Italiano de San Justo</h5>
+                                                            <p class="card-text">Dirección: Av. Pres. Perón 2576, San Justo,
+                                                                Buenos
+                                                                Aires</p>
+                                                        </div>
+                                                        <div class="col-lg-12 embed-responsive embed-responsive-16by9">
+                                                            <iframe class="embed-responsive-item"
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.442452467518!2d-58.569686423500855!3d-34.668781060938485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc7cd14129b61%3A0x78f6eab9f8572beb!2sHospital%20Italiano%20de%20San%20Justo%20Agust%C3%ADn%20Rocca!5e0!3m2!1ses-419!2sar!4v1700666944940!5m2!1ses-419!2sar"
+                                                                width="150" height="50" style="border:0;" allowfullscreen=""
+                                                                loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                                            </iframe>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div
+                                                    class="col-md-12 text-center mt-1 mb-1 d-flex flex-column align-items-center">
+                                                    <div class="col-lg-10 col-md-5 col-lg-3 card p-0 mb-2 seleccionable btn disabled"
+                                                        id="tarjeta1">
+                                                        <div class="card-header">
+                                                            <p class="h4 text-center card-title fw-bold">11 de Noviembre</p>
+                                                            <p class="h6 text-center text-dark-emphasis">19:00hs</p>
+                                                        </div>
+                                                        <div
+                                                            class="card-body fw-bold text-center d-flex flex-column align-items-center justify-content-center">
+                                                            <p class="h5">Dr. Sumo Samurai</p>
+                                                            <span class="h6 text-dark-emphasis">Cardiologo</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 text-center mt-2 d-flex flex-column">
+                                                    <button
+                                                        class="btn btn-danger rounded-3 btn-lg col-8 align-self-center mb-3"
+                                                        id="confirmarTurno" type="button">CANCELAR</button>
+                                                </div>
+                                                <div class="modal fade" id="confirmacionModal" tabindex="-1" role="dialog"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Turno
+                                                                    Confirmado</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body text-center">
+                                                                <p class="fw-bold fs-4">Su turno ha sido confirmado</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Cerrar</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div id="" class="bg-success-subtle rounded-4 p-3 mb-3">
+                                            <div class="row">
+                                                <div
+                                                    class="col-md-12 text-center mt-1 mb-1 d-flex flex-column align-items-center">
+                                                    <input type="text" class="form-control text-center col-md-8"
+                                                        value="Consulta Medica" disabled>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div
+                                                    class="col-md-12 text-center mt-1 mb-1 d-flex flex-column align-items-center">
+                                                    <input type="text" class="form-control text-center mb-1 col-md-8"
+                                                        value="Traumatologia" disabled>
+                                                    <input type="text" class="form-control text-center col-md-8"
+                                                        value="Miembro superior" disabled>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row justify-content-center">
+                                                <div
+                                                    class="col-lg-12 col-md-12 text-center mt-1 mb-1 d-md-flex flex-column align-items-center">
+                                                    <label
+                                                        class="col-lg-10 col-md-5 col-sm-12 card seleccionable btn card-body mx-1 disabled d-block"
+                                                        role="button">
+                                                        <input type="radio" name="lugarOptions" />
+                                                        <div>
+                                                            <h5 class="card-title">Hospital Italiano de San Justo</h5>
+                                                            <p class="card-text">Dirección: Av. Pres. Perón 2576, San Justo,
+                                                                Buenos
+                                                                Aires</p>
+                                                        </div>
+                                                        <div class="col-lg-12 embed-responsive embed-responsive-16by9">
+                                                            <iframe class="embed-responsive-item"
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.442452467518!2d-58.569686423500855!3d-34.668781060938485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc7cd14129b61%3A0x78f6eab9f8572beb!2sHospital%20Italiano%20de%20San%20Justo%20Agust%C3%ADn%20Rocca!5e0!3m2!1ses-419!2sar!4v1700666944940!5m2!1ses-419!2sar"
+                                                                width="150" height="50" style="border:0;" allowfullscreen=""
+                                                                loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                                            </iframe>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div
+                                                    class="col-md-12 text-center mt-1 mb-1 d-flex flex-column align-items-center">
+                                                    <div class="col-lg-10 col-md-5 col-lg-3 card p-0 mb-2 seleccionable btn disabled"
+                                                        id="tarjeta1">
+                                                        <div class="card-header">
+                                                            <p class="h4 text-center card-title fw-bold">11 de Noviembre</p>
+                                                            <p class="h6 text-center text-dark-emphasis">19:00hs</p>
+                                                        </div>
+                                                        <div
+                                                            class="card-body fw-bold text-center d-flex flex-column align-items-center justify-content-center">
+                                                            <p class="h5">Dr. Sumo Samurai</p>
+                                                            <span class="h6 text-dark-emphasis">Cardiologo</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 text-center mt-2 d-flex flex-column">
+                                                    <button
+                                                        class="btn btn-danger rounded-3 btn-lg col-8 align-self-center mb-3"
+                                                        id="confirmarTurno" type="button">CANCELAR</button>
+                                                </div>
+                                                <div class="modal fade" id="confirmacionModal" tabindex="-1" role="dialog"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Turno
+                                                                    Confirmado</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body text-center">
+                                                                <p class="fw-bold fs-4">Su turno ha sido confirmado</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Cerrar</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </main>
         </div>
-
-
-
-
-
-
-
-
-
-
-
     </div>
     </div>
 
@@ -368,54 +792,45 @@
     <script>
         $(document).ready(function () {
 
-            // Variable para almacenar la información seleccionada por el usuario
-            var seleccionUsuario = {
-                area: null,
-                especialidad: null,
-                lugar: null,
-                horario: null
-            };
+            ocultarTodasLasSecciones();
+            $('#seccionArea').show();
+            $('#solicitarTurno').show();
+            actualizarBotones('Area');
 
-            function ocultarTodasLasSecciones() {
-                $('.form-section').hide();
+            function ocultarTodasLasSecciones(validador) {
+                if (validador == 0) {
+                    $('.form-section').hide();
+                } else {
+                    $('.form-section').hide();
+                    $('.content-section').hide();
+                }
+
             }
 
             function actualizarBotones(seccionActual) {
                 $('.btn').prop('disabled', false);
                 $('#btnContinuar' + seccionActual).prop('disabled', false);
             }
+
             $("#confirmarTurno").prop("disabled", false);
 
             $("#confirmarTurno").click(function () {
                 $("#confirmacionModal").modal("show");
             });
 
-
-            ocultarTodasLasSecciones();
-            $('#seccionArea').show();
-            actualizarBotones('Area');
-
             $('#btnContinuarArea').click(function () {
-                if ($('input[name=areaOptions]:checked').length > 0) {
-                    // Guardar la selección del usuario
-                    seleccionUsuario.area = $('input[name=areaOptions]:checked').val();
-
-                    ocultarTodasLasSecciones();
-                    $('#seccionEspecialidad').show();
-                    actualizarBotones('Especialidad');
-                } else {
-                    alert('Selecciona una opción antes de continuar.');
-                }
+                ocultarTodasLasSecciones(0);
+                $('#btnArea').removeClass("focus");
+                $('#btnEspecialidad').addClass("focus")
+                $('#seccionEspecialidad').show();
+                actualizarBotones('Especialidad');
             });
 
             // Botón "Continuar" para la sección de Especialidad
             $('#btnContinuarEspecialidad').click(function () {
-                // Guardar la selección del usuario
-                seleccionUsuario.especialidad = $('#listaEspecialidades').val();
-
-                seleccionUsuario.especialidadNumero = $('#listaNumeros').val();
-
-                ocultarTodasLasSecciones();
+                ocultarTodasLasSecciones(0);
+                $('#btnEspecialidad').removeClass("focus");
+                $('#btnLugar').addClass("focus");
                 $('#seccionLugar').show();
                 actualizarBotones('Lugar');
             });
@@ -433,67 +848,81 @@
 
             // Botón "Continuar" para la sección de Lugar
             $('#btnContinuarLugar').click(function () {
-                // Guardar la selección del usuario
-                seleccionUsuario.lugar = $('#lugarSeleccionado').text();
-
-                ocultarTodasLasSecciones();
+                ocultarTodasLasSecciones(0);
+                $('#btnLugar').removeClass("focus");
+                $('#btnHorario').addClass("focus");
                 $('#seccionHorario').show();
                 actualizarBotones('Horario');
             });
 
             // Botón "Continuar" para la sección de Horario
             $('#btnContinuarHorario').click(function () {
-                // Guardar la selección del usuario
-                seleccionUsuario.horario = 'Horario seleccionado'; // Debes ajustar esto con la lógica real
-
-                ocultarTodasLasSecciones();
+                ocultarTodasLasSecciones(0);
+                $('#btnHorario').removeClass("focus");
+                $('#btnConfirmar').addClass("focus");
                 $('#seccionConfirmar').show();
                 actualizarBotones('Confirmar');
-
-                // Mostrar los datos seleccionados anteriormente en Confirmar Turno
-                $('#tipoConsultaSeleccionado').text(seleccionUsuario.area);
-                $('#especialidadSeleccionada').text(seleccionUsuario.especialidad + ' ' + seleccionUsuario.especialidadNumero).css('textTransform', 'capitalize');
-                $('#lugarSeleccionado').text(seleccionUsuario.lugar);
-                $('#horarioSeleccionado').text(seleccionUsuario.horario);
             });
 
             // Función para mostrar el contenido correspondiente al hacer clic en el menú lateral
             $('.nav-link').click(function (e) {
                 e.preventDefault();
                 var target = $(this).attr('href');
-                $('.content-section').hide();
-                $(target).show();
 
-                // Actualizar contenido cuando el usuario regresa a una sección
-                if (target === '#seccionArea') {
-                    // Restaurar la información guardada
-                    $('#btnArea').html('Seleccionar Área (' + seleccionUsuario.area + ')');
-                } else if (target === '#seccionEspecialidad') {
-                    $('#btnEspecialidad').html('Seleccionar Especialidad (' + seleccionUsuario.especialidad + ')');
-                } else if (target === '#seccionLugar') {
-                    $('#btnLugar').html('Seleccionar Lugar (' + seleccionUsuario.lugar + ')');
-                } else if (target === '#seccionHorario') {
-                    $('#btnHorario').html('Seleccionar Horario (' + seleccionUsuario.horario + ')');
+                // Ocultar todas las secciones
+                $('.content-section').hide();
+
+                // Mostrar la sección correspondiente según la opción seleccionada
+                if (target == '#solicitarTurno') {
+                    $('#solicitarTurno').show();
+                } else if (target == '#verTurnosAgendados') {
+                    $('#verTurnosAgendados').show();
                 }
+
+            });
+            document.addEventListener("DOMContentLoaded", function () {
+                const botonesSeleccionables = document.querySelectorAll(".seleccionable");
+
+                botonesSeleccionables.forEach(function (boton) {
+                    boton.addEventListener("click", function () {
+                        // Desmarcar todos los botones
+                        botonesSeleccionables.forEach(function (b) {
+                            b.classList.remove("seleccionado");
+                        });
+
+                        // Marcar el botón clicado
+                        boton.classList.add("seleccionado");
+
+                        // Desmarcar todos los radios
+                        const radios = document.querySelectorAll('input[name="lugarOptions"]');
+                        radios.forEach(function (radio) {
+                            radio.checked = false;
+                        });
+
+                        // Marcar el radio correspondiente al botón clicado
+                        const radio = boton.querySelector('input[name="lugarOptions"]');
+                        radio.checked = true;
+                    });
+                });
+            });
+            document.addEventListener('DOMContentLoaded', function () {
+                // Añade un listener de clic a cada tarjeta
+                var tarjetas = document.querySelectorAll('.seleccionable');
+                tarjetas.forEach(function (tarjeta) {
+                    tarjeta.addEventListener('click', function () {
+                        // Remueve la clase 'seleccionada' de todas las tarjetas
+                        tarjetas.forEach(function (t) {
+                            t.classList.remove('seleccionada');
+                        });
+                        // Agrega la clase 'seleccionada' solo a la tarjeta clickeada
+                        tarjeta.classList.add('seleccionada');
+
+                        // Habilita el botón "Continuar"
+                        document.getElementById('btnContinuarHorario').removeAttribute('disabled');
+                    });
+                });
             });
         });
-
-        // Función para seleccionar un lugar y mostrar mapa
-        function seleccionarLugar(nombre, latitud, longitud) {
-            // Mostrar el nombre del lugar seleccionado
-            $('#lugarSeleccionado').text(nombre);
-
-            // Guardar la latitud y longitud seleccionada
-            seleccionUsuario.latitud = latitud;
-            seleccionUsuario.longitud = longitud;
-
-            // Habilitar el botón "Continuar Lugar"
-            $('#btnContinuarLugar').prop('disabled', false);
-
-            // Mostrar mapa (usando la API de Google Maps)
-            var mapaURL = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&q=' + latitud + ',' + longitud;
-            $('#mapa').attr('src', mapaURL);
-        }
     </script>
 </body>
 
